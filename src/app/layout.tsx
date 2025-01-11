@@ -1,3 +1,4 @@
+import Header from "@/sections/header";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,7 +14,8 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-         {children}
+        <Header />
+        {children}
       </body>
     </html>
   );
