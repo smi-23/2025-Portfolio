@@ -16,29 +16,27 @@ export default function TechStack() {
         }}
         spacing={2}
       >
-        <div style={{ textAlign: "center", marginBottom: 10 }}>
+        <div style={{ marginBottom: 20 }}>
           <Typography variant={"h4"} sx={{ fontWeight: 700 }}>
             기술 스택
           </Typography>
         </div>
-        <Grid2 container sx={{ maxWidth: 600 }}>
+        <Grid2 container sx={{ maxWidth: 550 }}>
           {TECH.map((techStack: TechInfo) => (
-            <Grid2 size={3}>
-              <Tooltip title={techStack.id} key={techStack.id}>
+            <Grid2 key={techStack.id} size={3} sx={{ backgroundColor: "#efefef" }}>
+              <Tooltip title={techStack.id}>
                 <Box
                   sx={{
                     backgroundColor: "white",
                     borderRadius: "35px",
                     padding: "15px",
-                    margin: 2,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    width: 80,
-                    height: 80,
+                    mb: 3,
+                    ml: 3,
+                    width: 50,
+                    height: 50,
                   }}
                 >
-                  <Image src={techStack.icon} alt={techStack.id} width={70} height={70} style={{ margin: 40 }} />
+                  <Image src={techStack.icon} alt={techStack.id} width={50} height={50} />
                 </Box>
               </Tooltip>
             </Grid2>

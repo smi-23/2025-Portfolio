@@ -7,16 +7,14 @@ export default function Education() {
     <div id="educations">
       <Stack
         alignItems={"center"}
-        justifyContent={"center"}
         sx={{
           px: 1,
           py: 10,
           width: "100%",
-          // backgroundColor: "gray",
         }}
         spacing={2}
       >
-        <div style={{ textAlign: "center", marginBottom: 10 }}>
+        <div style={{ marginBottom: 20 }}>
           <Typography variant={"h4"} sx={{ fontWeight: 700 }}>
             교육
           </Typography>
