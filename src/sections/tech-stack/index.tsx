@@ -6,11 +6,6 @@ import Image from "next/image";
 export default function TechStack() {
   return (
     <div id="tech-stack">
-      <div style={{ textAlign: "center", marginBottom: 20 }}>
-        <Typography variant={"h4"} sx={{ fontWeight: 700 }}>
-          기술 스택
-        </Typography>
-      </div>
       <Stack
         alignItems={"center"}
         sx={{
@@ -21,15 +16,20 @@ export default function TechStack() {
         }}
         spacing={2}
       >
+        <div style={{ textAlign: "center", marginBottom: 10 }}>
+          <Typography variant={"h4"} sx={{ fontWeight: 700 }}>
+            기술 스택
+          </Typography>
+        </div>
         <Grid2 container sx={{ maxWidth: 600 }}>
           {TECH.map((techStack: TechInfo) => (
             <Grid2 size={3}>
               <Tooltip title={techStack.id} key={techStack.id}>
                 <Box
                   sx={{
-                    backgroundColor: "white", // 배경을 흰색으로 설정
-                    borderRadius: "35px", // 테두리를 둥글게 설정
-                    padding: "15px", // 이미지 주위에 여백 추가
+                    backgroundColor: "white",
+                    borderRadius: "35px",
+                    padding: "15px",
                     margin: 2,
                     display: "flex",
                     justifyContent: "center",
