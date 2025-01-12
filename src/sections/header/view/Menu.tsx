@@ -7,7 +7,7 @@ export default function HeaderMenu() {
     <>
       {HEADERS.map((header: Header) => (
         <Link
-          key={header.id} // key속 성 추가
+          key={header.id}
           href={`/#${header.id}`} // 페이지에서 해당 위치로 이동
           style={{ textDecoration: "none" }}
         >
@@ -17,6 +17,15 @@ export default function HeaderMenu() {
               fontWeight: 700,
               fontSize: 16,
               mx: 2,
+              "&:hover": {
+                borderBottom: "2px solid red", // 마우스를 올렸을 때 밑줄을 빨간색으로 설정
+              },
+              "&:focus": {
+                borderBottom: "2px solid white", // 클릭 후 포커스되었을 때 밑줄을 빨간색으로 설정
+              },
+              "&:active": {
+                borderBottom: "2px solid white", // 클릭 시 밑줄을 빨간색으로 설정
+              },
             }}
           >
             {header.title}
