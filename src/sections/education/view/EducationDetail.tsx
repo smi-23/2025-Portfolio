@@ -1,4 +1,5 @@
 "use client";
+import CustomMarkdown from "@/components/markdown/CustomMarkdown";
 import { Stack, Typography } from "@mui/material";
 
 interface EducationDtailProps {
@@ -18,7 +19,7 @@ export default function EducationDetail({ description, mdFilePath }: EducationDt
       >
         <Typography>{description}</Typography>
       </Stack>
-      <Stack sx={{ paddingLeft: 1, mt: 3 }}>여기에 마크다운 넣고 싶어</Stack>
+      <Stack sx={{ paddingLeft: 1, mt: 3 }}><CustomMarkdown mdFilePath={mdFilePath}/></Stack>
     </Stack>
   );
 }
