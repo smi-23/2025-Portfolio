@@ -1,9 +1,9 @@
-export interface HeaderMenuItem {
-  id: String;
-  title: String;
+export interface Header {
+  id: string;
+  title: string;
 }
 
-export const HEADER_MENU_ITEMS: HeaderMenuItem[] = [
+export const HEADERS: Header[] = [
   {
     id: "tech-stack",
     title: "기술 스택",

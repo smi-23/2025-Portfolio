@@ -22,6 +22,13 @@ export default function TextLogo({ text }: TextLogoProps) {
         }}
       >
         {text}
+        <span
+          style={{
+            color: "red", // 초록색으로 변경
+          }}
+        >
+          .
+        </span>
       </Typography>
     </Link>
   );

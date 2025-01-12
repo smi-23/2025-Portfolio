@@ -1,13 +1,14 @@
-import { HEADER_MENU_ITEMS, HeaderMenuItem } from "@/data/HeaderMenuItem";
+import { HEADERS, Header } from "@/data/header";
 import { Typography } from "@mui/material";
 import Link from "next/link";
 
 export default function HeaderMenu() {
   return (
     <>
-      {HEADER_MENU_ITEMS.map((headerMenuItem: HeaderMenuItem) => (
+      {HEADERS.map((header: Header) => (
         <Link
-          href={`/#${headerMenuItem.id}`} // 페이지에서 해당 위치로 이동
+          key={header.id} // key속 성 추가
+          href={`/#${header.id}`} // 페이지에서 해당 위치로 이동
           style={{ textDecoration: "none" }}
         >
           <Typography
@@ -18,7 +19,7 @@ export default function HeaderMenu() {
               mx: 2,
             }}
           >
-            {headerMenuItem.title}
+            {header.title}
           </Typography>
         </Link>
       ))}
