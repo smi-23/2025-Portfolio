@@ -41,8 +41,8 @@ export default function ProjectCard({ project }: ProjectProps) {
           {description}
         </Typography>
         <Stack direction="row" spacing={1} sx={{ marginBottom: 2 }}>
-          {tags.map((index, tag) => (
-            <Chip key={index} label={tag} size="small" />
+          {tags.map((tag) => (
+            <Chip key={tag} label={tag} size="small" />
           ))}
         </Stack>
         <Typography variant="body2" color="text.secondary">
