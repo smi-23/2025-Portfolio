@@ -18,11 +18,11 @@ export default function EducationTitle({ imgSrc, name, from, duration }: Educati
         height={150}
         style={{
           borderRadius: "40px",
-          marginBottom: "10px",
+          marginBottom: "15px",
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         }}
       />
-      <Typography sx={{ fontWeight: 700, fontSize: 30 }}>{name}</Typography>
+      <Typography sx={{ fontWeight: 700, fontSize: 25 }}>{name}</Typography>
       <Typography variant={"body1"}>주관: {from}</Typography>
       <Typography variant={"body1"}>{duration}</Typography>
     </Stack>

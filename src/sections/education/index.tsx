@@ -1,4 +1,3 @@
-import { Stack, Typography } from "@mui/material";
 import EducationBox from "./view/EducationBox";
 import { EDUCATIONS, EducationInfo } from "@/data/education";
 import SectionLayout from "../layout";

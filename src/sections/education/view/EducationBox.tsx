@@ -10,30 +10,17 @@ interface EducationBoxProps {
 export default function EducationBox({ education }: EducationBoxProps) {
   const { imgSrc, name, from, duration, description, mdFilePath } = education;
   return (
-    <Grid2
-      container
-      direction={"row"}
-      maxWidth={"md"}
-      sx={{
-        pt: 2,
-      }}
-    >
+    <Grid2 container direction={"row"} maxWidth={"md"} sx={{}}>
       <Grid2
         size={{ xs: 12, sm: 3 }}
         sx={{
-          py: 1,
           borderRight: "1px solid",
           borderColor: "black",
         }}
       >
         <EducationTitle imgSrc={imgSrc} name={name} from={from} duration={duration} />
       </Grid2>
-      <Grid2
-        size={{ xs: 12, sm: 9 }}
-        sx={{
-          py: 1,
-        }}
-      >
+      <Grid2 size={{ xs: 12, sm: 9 }} sx={{}}>
         <EducationDetail description={description} mdFilePath={mdFilePath} />
       </Grid2>
     </Grid2>

@@ -8,18 +8,20 @@ interface EducationDtailProps {
 }
 export default function EducationDetail({ description, mdFilePath }: EducationDtailProps) {
   return (
-    <Stack sx={{ ml: 3 }}>
+    <Stack sx={{ ml: 4 }}>
       <Stack
         sx={{
           width: "100%",
-          p: 2,
+          p: 3,
 
           backgroundColor: "#efefef",
         }}
       >
         <Typography>{description}</Typography>
       </Stack>
-      <Stack sx={{ paddingLeft: 1, mt: 3 }}><CustomMarkdown mdFilePath={mdFilePath}/></Stack>
+      <Stack sx={{ py: 2 }}>
+        <CustomMarkdown mdFilePath={mdFilePath} />
+      </Stack>
     </Stack>
   );
 }
