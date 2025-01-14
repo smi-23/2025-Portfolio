@@ -1,17 +1,24 @@
-import { Grid2, Stack, Typography } from "@mui/material";
+"use client";
 import ProjectCard from "@/components/card/projectCard";
 import SectionLayout from "../layout";
+import CustomSwiper from "@/components/swipe/customSwiper";
+
+import { Grid2 } from "@mui/material";
+
+import { SwiperSlide } from "swiper/react";
 
 export default function Project({ projects }: { projects: any[] }) {
   return (
     <SectionLayout id="project" title="프로젝트" sx={{ backgroundColor: "#efefef" }}>
-      <Grid2 container sx={{ width: "80%", pl: 3 }}>
+      <CustomSwiper>
         {projects.map((project) => (
-          <Grid2 key={project.id} size={{ md: 4 }}>
-            <ProjectCard project={project} />
-          </Grid2>
+          <SwiperSlide key={`slide-${project.id}`}>
+            <Grid2 key={`grid-${project.id}`} justifyItems={"center"}>
+              <ProjectCard project={project} />
+            </Grid2>
+          </SwiperSlide>
         ))}
-      </Grid2>
+      </CustomSwiper>
     </SectionLayout>
   );
 }

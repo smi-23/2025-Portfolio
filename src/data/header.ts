@@ -9,11 +9,11 @@ export const HEADERS: Header[] = [
     title: "기술 스택",
   },
   {
-    id: "projects",
+    id: "project",
     title: "프로젝트",
   },
   {
-    id: "educations",
+    id: "education",
     title: "교육",
   },
 ];

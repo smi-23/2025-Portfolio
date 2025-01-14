@@ -1,10 +1,10 @@
 import { Stack, StackProps, Typography } from "@mui/material";
-import React from "react";
+import React, { ReactNode } from "react";
 
 export interface sectionLayoutProps extends StackProps {
   id: string;
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 export default function SectionLayout({ id, title, children, sx }: sectionLayoutProps) {
   const mergedSx = {

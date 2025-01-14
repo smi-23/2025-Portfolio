@@ -25,28 +25,32 @@ export default function ProjectCard({ project }: ProjectProps) {
   return (
     <Card
       sx={{
-        maxWidth: 345,
-        border: "1px solid #ddd",
-        borderRadius: "10px",
-        overflow: "hidden",
+        mb: 7,
+        width: "90%",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+        borderRadius: 3,
+        "&:hover": {
+          overflow: "hidden",
+          transform: "scale(1.02)",
+        },
       }}
     >
       {/* 커버 이미지 */}
-      {cover && <CardMedia component="img" height="140" image={cover} alt="Project Cover" />}
+      {cover && <CardMedia component="img" image={cover} alt="Project Cover" sx={{ height: 200 }} />}
       <CardContent>
-        <Typography variant="h6" sx={{ fontWeight: 700, marginBottom: 1 }}>
+        <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
           {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ marginBottom: 2 }}>
-          {description}
-        </Typography>
-        <Stack direction="row" spacing={1} sx={{ marginBottom: 2 }}>
+        <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
           {tags.map((tag) => (
             <Chip key={tag} label={tag} size="small" />
           ))}
         </Stack>
         <Typography variant="body2" color="text.secondary">
           작업 기간: {workPeriod.start} ~ {workPeriod.end || "현재"}
+        </Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+          {description}
         </Typography>
         {github && (
           <Typography
@@ -55,7 +59,7 @@ export default function ProjectCard({ project }: ProjectProps) {
             component="a"
             href={github}
             target="_blank"
-            sx={{ marginTop: 2, display: "block" }}
+            sx={{ display: "block" }}
           >
             GitHub 링크
           </Typography>

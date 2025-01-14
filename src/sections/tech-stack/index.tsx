@@ -9,7 +9,7 @@ export default function TechStack() {
     <SectionLayout id="tech-stack" title="기술 스택" sx={{ backgroundColor: "#efefef" }}>
       <Grid2 container sx={{ maxWidth: 550 }}>
         {TECH.map((techStack: TechInfo) => (
-          <Grid2 key={techStack.id} size={3}>
+          <Grid2 key={techStack.id} size={3} justifyItems={"center"} sx={{}}>
             <Tooltip title={techStack.id}>
               <Box
                 sx={{
@@ -17,7 +17,6 @@ export default function TechStack() {
                   borderRadius: "35px",
                   padding: "15px",
                   mb: 3,
-                  ml: 3,
                   width: 50,
                   height: 50,
                 }}

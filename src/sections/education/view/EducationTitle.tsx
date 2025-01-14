@@ -17,7 +17,7 @@ export default function EducationTitle({ imgSrc, name, from, duration }: Educati
         width={150}
         height={150}
         style={{
-          borderRadius: "40px",
+          borderRadius: "25px",
           marginBottom: "15px",
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         }}
