@@ -5,7 +5,7 @@ import { Grid2 } from "@mui/material";
 
 export default function Project({ projects }: { projects: any[] }) {
   return (
-    <SectionLayout id="project" title="PROJECT" sx={{ backgroundColor: "#efefef" }}>
+    <SectionLayout id="project" title="Projects" sx={{ backgroundColor: "#efefef" }}>
       <CustomCarousel>
         {projects.map((project) => (
           <Grid2 key={project.id} justifyItems={"center"}>

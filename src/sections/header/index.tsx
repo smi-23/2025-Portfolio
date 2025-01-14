@@ -46,7 +46,7 @@ export default function Header() {
             justifyContent: "space-between", // 왼쪽과 오른쪽 끝으로 요소 배치
           }}
         >
-          <TextLogo text={"조가람"} />
+          <TextLogo text={"Who I Am"} />
           <div style={{ display: "flex" }}>
             <HeaderMenu />
           </div>

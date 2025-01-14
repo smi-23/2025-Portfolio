@@ -6,14 +6,14 @@ export interface Header {
 export const HEADERS: Header[] = [
   {
     id: "tech-stack",
-    title: "기술 스택",
+    title: "Tech Stack",
   },
   {
     id: "project",
-    title: "프로젝트",
+    title: "Projects",
   },
   {
     id: "education",
-    title: "교육",
+    title: "Education",
   },
 ];

@@ -6,7 +6,7 @@ import SectionLayout from "../layout";
 
 export default function TechStack() {
   return (
-    <SectionLayout id="tech-stack" title="SKILLS" sx={{ backgroundColor: "#efefef" }}>
+    <SectionLayout id="tech-stack" title="Tech Stack" sx={{ backgroundColor: "#efefef" }}>
       <Grid2 container sx={{ maxWidth: 550 }}>
         {TECH.map((techStack: TechInfo) => (
           <Grid2 key={techStack.id} size={3} justifyItems={"center"} sx={{}}>

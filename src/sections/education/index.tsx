@@ -4,7 +4,7 @@ import SectionLayout from "../layout";
 
 export default function Education() {
   return (
-    <SectionLayout id="education" title="EDUCATION">
+    <SectionLayout id="education" title="Education">
       {EDUCATIONS.map((education: EducationInfo, index) => (
         <EducationBox key={index} education={education} />
       ))}

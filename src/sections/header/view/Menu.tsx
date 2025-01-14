@@ -29,6 +29,7 @@ export default function HeaderMenu() {
             }}
           >
             {header.title}
+            <span style={{ color: "red" }}>.</span>
           </Typography>
         </Link>
       ))}
