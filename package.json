@@ -19,7 +19,9 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-markdown": "^9.0.3",
+    "react-slick": "^0.30.3",
     "react-type-animation": "^3.2.0",
+    "slick-carousel": "^1.8.1",
     "swiper": "^11.2.1"
   },
   "devDependencies": {
@@ -27,6 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-slick": "^0.23.13",
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
     "prettier": "^3.4.2",

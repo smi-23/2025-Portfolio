@@ -8,7 +8,6 @@ export interface sectionLayoutProps extends StackProps {
 }
 export default function SectionLayout({ id, title, children, sx }: sectionLayoutProps) {
   const mergedSx = {
-    px: 1,
     py: 10,
     width: "100%",
     ...sx,
