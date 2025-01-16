@@ -36,7 +36,9 @@ export default function Header() {
         elevation={0}
         sx={{
           display: "block",
-          backgroundColor: "gray",
+          backgroundColor: "white",
+          borderBottom: "1px solid",
+          borderColor: "#d1d1d1",
           justifyContent: "center",
         }}
       >
