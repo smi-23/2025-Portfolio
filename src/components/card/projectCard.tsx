@@ -1,36 +1,19 @@
 "use client";
 import Link from "next/link";
 import { PROJECT } from "@/type/project";
-import { Card, CardContent, Typography, Chip, Stack, CardMedia, Tooltip, IconButton } from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import PlagiarismIcon from "@mui/icons-material/Plagiarism";
 import TooltipIcon from "../icon/tooltipIcon";
 import { useRouter } from "next/navigation";
+import { Card, CardContent, Typography, Chip, Stack, CardMedia } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import PlagiarismIcon from "@mui/icons-material/Plagiarism";
 
-export interface ProjectProps {
+export interface ProjectCardProps {
   project: PROJECT;
 }
 
-export default function ProjectCard({ project }: ProjectProps) {
+export default function ProjectCard({ project }: ProjectCardProps) {
   const router = useRouter();
-
-  // 데이터 가공
-  const formattedProject = {
-    pageId: project.id,
-    cover: project.cover?.external?.url || "",
-    title: project.properties.Title?.title[0]?.text?.content || "",
-    description: project.properties.Description?.rich_text[0]?.text?.content || "",
-    githubUrl: project.properties.Github?.url || "",
-    workPeriod: {
-      start: project.properties.WorkPeriod?.date?.start || "",
-      end: project.properties.WorkPeriod?.date?.end || "",
-    },
-    tags: project.properties.Tag?.multi_select.map((tag: { name: string }) => tag.name) || [],
-  };
-
-  // console.log("❌❌❌ 프로젝트 카드에서 사용할 가공된 프로젝트: ", formattedProject);
-
-  const { pageId, cover, title, description, githubUrl, workPeriod, tags } = formattedProject;
+  const { cover, title, description, githubUrl, workPeriod, tags, slug } = project;
 
   return (
     <Card
@@ -47,12 +30,12 @@ export default function ProjectCard({ project }: ProjectProps) {
     >
       {/* 커버 이미지 */}
 
-      <Link href={`/project/${pageId}`}>
+      <Link href={`/project/${slug}`}>
         {cover && <CardMedia component="img" image={cover} alt="Project Cover" sx={{ height: 200 }} />}
       </Link>
       <CardContent>
         {/* 타이틀 */}
-        <Link href={`/project/${pageId}`} style={{ textDecoration: "none", color: "inherit" }}>
+        <Link href={`/project/${slug}`} style={{ textDecoration: "none", color: "inherit" }}>
           <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
             {title}
           </Typography>
@@ -86,7 +69,7 @@ export default function ProjectCard({ project }: ProjectProps) {
           title={"상세 페이지"}
           Icon={PlagiarismIcon}
           onClick={() => {
-            router.push(`/project/${pageId}`);
+            router.push(`/project/${slug}`);
           }}
         />
       </CardContent>

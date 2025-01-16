@@ -1,5 +1,4 @@
 import { NotionAPI } from 'notion-client';
-import { notFound } from "next/navigation";
 
 const notion = new NotionAPI();
 
@@ -13,6 +12,5 @@ export async function FetchNotionPage({ pageId }: NotionPagePropse) {
     return response;
   } catch (err) {
     console.error(err);
-    notFound();
   }
 }
