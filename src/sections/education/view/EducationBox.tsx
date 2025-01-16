@@ -15,7 +15,7 @@ export default function EducationBox({ education }: EducationBoxProps) {
         size={{ xs: 12, sm: 3 }}
         sx={{
           borderRight: "1px solid",
-          borderColor: "black",
+          borderColor: "#d1d1d1",
         }}
       >
         <EducationTitle imgSrc={imgSrc} name={name} from={from} duration={duration} />
