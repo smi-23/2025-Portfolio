@@ -1,5 +1,5 @@
 "use client";
-import { AppBar, Button, Toolbar } from "@mui/material";
+import { AppBar, Toolbar } from "@mui/material";
 import TextLogo from "./view/TextLogo";
 import HeaderMenu from "./view/Menu";
 import { useEffect, useState } from "react";

@@ -1,9 +1,8 @@
 "use client";
 import { Stack, Snackbar } from "@mui/material";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
 import { useState } from "react";
 import { SOCIALS, Social } from "@/data/social";
+import TooltipIcon from "@/components/icon/tooltipIcon";
 
 export default function Contact() {
   const [snackbar, setSnackbar] = useState({
@@ -28,11 +27,12 @@ export default function Contact() {
     <>
       <Stack direction="row" spacing={3} alignItems="center">
         {SOCIALS.map((social: Social) => (
-          <Tooltip key={social.id} title={social.id} onClick={() => copyToClipboard(social.text)}>
-            <IconButton>
-              <social.icon />
-            </IconButton>
-          </Tooltip>
+          <TooltipIcon
+            key={social.id}
+            title={social.id}
+            Icon={social.icon}
+            onClick={() => copyToClipboard(social.text)}
+          />
         ))}
         <Snackbar
           open={snackbar.open}

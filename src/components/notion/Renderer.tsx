@@ -1,9 +1,11 @@
 "use client";
 import { NotionRenderer } from "react-notion-x";
+// core styles shared by all of react-notion-x (required)
+import "react-notion-x/src/styles.css";
 import "./Renderer.css";
 
 interface RendererProps {
-  recordMap: any; // 임의로 any
+  recordMap: any;
   rootPageId: string;
 }
 

@@ -4,11 +4,16 @@ import { PROJECT } from "@/type/project";
 import { Card, CardContent, Typography, Chip, Stack, CardMedia, Tooltip, IconButton } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import PlagiarismIcon from "@mui/icons-material/Plagiarism";
+import TooltipIcon from "../icon/tooltipIcon";
+import { useRouter } from "next/navigation";
 
 export interface ProjectProps {
   project: PROJECT;
 }
+
 export default function ProjectCard({ project }: ProjectProps) {
+  const router = useRouter();
+
   // 데이터 가공
   const formattedProject = {
     pageId: project.id,
@@ -23,15 +28,9 @@ export default function ProjectCard({ project }: ProjectProps) {
     tags: project.properties.Tag?.multi_select.map((tag: { name: string }) => tag.name) || [],
   };
 
-  console.log("❌❌❌ 프로젝트 카드에서 사용할 가공된 프로젝트: ", formattedProject);
+  // console.log("❌❌❌ 프로젝트 카드에서 사용할 가공된 프로젝트: ", formattedProject);
 
   const { pageId, cover, title, description, githubUrl, workPeriod, tags } = formattedProject;
-
-  const openLink = async (githubUrl: string) => {
-    try {
-      window.open(githubUrl, "_blank");
-    } catch (error) {}
-  };
 
   return (
     <Card
@@ -47,12 +46,13 @@ export default function ProjectCard({ project }: ProjectProps) {
       }}
     >
       {/* 커버 이미지 */}
+
       <Link href={`/project/${pageId}`}>
         {cover && <CardMedia component="img" image={cover} alt="Project Cover" sx={{ height: 200 }} />}
       </Link>
       <CardContent>
         {/* 타이틀 */}
-        <Link href={`/project/${pageId}`}>
+        <Link href={`/project/${pageId}`} style={{ textDecoration: "none", color: "inherit" }}>
           <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
             {title}
           </Typography>
@@ -72,16 +72,23 @@ export default function ProjectCard({ project }: ProjectProps) {
           {description}
         </Typography>
         {/* 깃허브 링크 */}
-        <Tooltip title={"Github"} onClick={() => openLink(githubUrl)}>
-          <IconButton>
-            <GitHubIcon />
-          </IconButton>
-        </Tooltip>
-        <Tooltip title={"상세 페이지"} onClick={() => openLink(githubUrl)}>
-          <IconButton>
-            <PlagiarismIcon />
-          </IconButton>
-        </Tooltip>
+        {githubUrl && (
+          <TooltipIcon
+            title={"Github"}
+            Icon={GitHubIcon}
+            onClick={() => {
+              window.open(githubUrl, "_blank");
+            }}
+          />
+        )}
+        {/* 상세 페이지 이동 */}
+        <TooltipIcon
+          title={"상세 페이지"}
+          Icon={PlagiarismIcon}
+          onClick={() => {
+            router.push(`/project/${pageId}`);
+          }}
+        />
       </CardContent>
     </Card>
   );

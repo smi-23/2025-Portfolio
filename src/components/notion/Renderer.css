@@ -1,4 +1,12 @@
-/* Renderer.css */
-.title {
+.notion-title {
+  display: none !important;
+}
+
+.notion-page-cover-wrapper {
+  display: none !important;
+
+}
+
+.notion-header {
   display: none !important;
 }
