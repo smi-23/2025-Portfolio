@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
-  const [showHeader, setShowHeader] = useState(true); // 섹션이 아직 없어서 임시로 true로 설정
+  const [showHeader, setShowHeader] = useState(false); // 섹션이 아직 없어서 임시로 true로 설정
   const pathname = usePathname();
 
   // 스크롤 위치가 5px초과라면 setShowHeader가 true로 바뀌고 헤더가 보이게 됨
@@ -46,7 +46,8 @@ export default function Header() {
             justifyContent: "space-between", // 왼쪽과 오른쪽 끝으로 요소 배치
           }}
         >
-          <TextLogo text={"Who I Am"} />
+          {/* 홈 버튼을 뒤에 추가하는게 좋겠네 */}
+          <TextLogo text={"About Me"} />
           <div style={{ display: "flex" }}>
             <HeaderMenu />
           </div>

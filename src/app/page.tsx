@@ -2,10 +2,10 @@ import Education from "@/sections/education";
 import Introduction from "@/sections/introduction";
 import Project from "@/sections/project";
 import TechStack from "@/sections/tech-stack";
-import { fetchNotion } from "@/lib/notion";
+import { fetchNotionDB } from "@/lib/notion";
 
 export default async function Home() {
-  const projects = await fetchNotion();
+  const projects = await fetchNotionDB();
 
   return (
     <main>

@@ -1,16 +1,21 @@
+"use client";
+import Link from "next/link";
 import { PROJECT } from "@/type/project";
-import { Card, CardContent, Typography, Chip, Stack, CardMedia } from "@mui/material";
+import { Card, CardContent, Typography, Chip, Stack, CardMedia, Tooltip, IconButton } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import PlagiarismIcon from "@mui/icons-material/Plagiarism";
+
 export interface ProjectProps {
   project: PROJECT;
 }
 export default function ProjectCard({ project }: ProjectProps) {
   // 데이터 가공
   const formattedProject = {
-    id: project.id,
+    pageId: project.id,
     cover: project.cover?.external?.url || "",
     title: project.properties.Title?.title[0]?.text?.content || "",
     description: project.properties.Description?.rich_text[0]?.text?.content || "",
-    github: project.properties.Github?.url || "",
+    githubUrl: project.properties.Github?.url || "",
     workPeriod: {
       start: project.properties.WorkPeriod?.date?.start || "",
       end: project.properties.WorkPeriod?.date?.end || "",
@@ -20,7 +25,13 @@ export default function ProjectCard({ project }: ProjectProps) {
 
   console.log("❌❌❌ 프로젝트 카드에서 사용할 가공된 프로젝트: ", formattedProject);
 
-  const { cover, title, description, github, workPeriod, tags } = formattedProject;
+  const { pageId, cover, title, description, githubUrl, workPeriod, tags } = formattedProject;
+
+  const openLink = async (githubUrl: string) => {
+    try {
+      window.open(githubUrl, "_blank");
+    } catch (error) {}
+  };
 
   return (
     <Card
@@ -36,34 +47,41 @@ export default function ProjectCard({ project }: ProjectProps) {
       }}
     >
       {/* 커버 이미지 */}
-      {cover && <CardMedia component="img" image={cover} alt="Project Cover" sx={{ height: 200 }} />}
+      <Link href={`/project/${pageId}`}>
+        {cover && <CardMedia component="img" image={cover} alt="Project Cover" sx={{ height: 200 }} />}
+      </Link>
       <CardContent>
-        <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
-          {title}
-        </Typography>
+        {/* 타이틀 */}
+        <Link href={`/project/${pageId}`}>
+          <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+            {title}
+          </Typography>
+        </Link>
+        {/* 태그 */}
         <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
           {tags.map((tag) => (
             <Chip key={tag} label={tag} size="small" />
           ))}
         </Stack>
+        {/* 작업 기간 */}
         <Typography variant="body2" color="text.secondary">
           작업 기간: {workPeriod.start} ~ {workPeriod.end || "현재"}
         </Typography>
+        {/* 설명 */}
         <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
           {description}
         </Typography>
-        {github && (
-          <Typography
-            variant="body2"
-            color="primary"
-            component="a"
-            href={github}
-            target="_blank"
-            sx={{ display: "block" }}
-          >
-            GitHub 링크
-          </Typography>
-        )}
+        {/* 깃허브 링크 */}
+        <Tooltip title={"Github"} onClick={() => openLink(githubUrl)}>
+          <IconButton>
+            <GitHubIcon />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title={"상세 페이지"} onClick={() => openLink(githubUrl)}>
+          <IconButton>
+            <PlagiarismIcon />
+          </IconButton>
+        </Tooltip>
       </CardContent>
     </Card>
   );

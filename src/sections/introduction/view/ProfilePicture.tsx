@@ -8,7 +8,8 @@ export default function ProfilePicture() {
         alt="profile picture"
         width={300}
         height={300}
-        style={{ borderRadius: "50%" }} // 예시로 둥글게 만드는 스타일
+        style={{ borderRadius: "50%" }}
+        priority
       />
     </>
   );
