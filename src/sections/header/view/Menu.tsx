@@ -14,7 +14,7 @@ export default function HeaderMenu() {
               fontSize: 16,
               mx: 2,
               "&:hover": {
-                color: "#22d3d6",
+                color: "#00cccc",
               },
               "&:active": {
                 color: "black",

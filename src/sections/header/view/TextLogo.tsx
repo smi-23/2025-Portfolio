@@ -20,7 +20,7 @@ export default function TextLogo({ text }: TextLogoProps) {
           fontWeight: 700,
           fontSize: 18,
           "&:hover": {
-            color: "#22d3d6",
+            color: "#00cccc",
           },
         }}
       >

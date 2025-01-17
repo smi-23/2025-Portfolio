@@ -10,3 +10,36 @@
 .notion-header {
   display: none !important;
 }
+
+.notion-inline-code {
+  background-color: #efefef;
+  color: black;
+  font-size: 15px;
+}
+
+.notion-quote {
+  border-color: #00cccc;
+  background-color: #efefef;
+  margin-top: 26.4px;
+}
+
+.notion-h1 {
+  font-size: 35px;
+  color: #00cccc;
+  font-weight: bold;
+  padding-top: 50px !important;
+}
+
+.notion-h2 .notion-h-title {
+  font-size: 35px;
+  color: #00cccc;
+  font-weight: bold;
+}
+
+.notion-h3 .notion-h-title {
+  font-weight: bold;
+}
+
+.notion-hr {
+  border-top: 1px #efefef solid !important;
+}
