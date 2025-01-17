@@ -1,6 +1,6 @@
 import { FetchNotionPage } from "@/lib/notionPage";
 import Renderer from "@/components/notion/Renderer";
-import { fetchNotionDB } from "@/lib/notion";
+import { fetchNotionDb } from "@/lib/notion";
 import { notFound } from "next/navigation";
 import { PROJECT } from "@/type/project";
 
@@ -10,7 +10,7 @@ interface ProjectDetailPageProps {
 
 export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   const { slug } = await params;
-  const projects: PROJECT[] = await fetchNotionDB();
+  const projects: PROJECT[] = await fetchNotionDb();
   const project = projects.find((project) => project.slug === slug);
 
   if (!project) {

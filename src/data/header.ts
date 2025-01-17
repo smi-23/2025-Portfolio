@@ -10,7 +10,7 @@ export const HEADERS: Header[] = [
   },
   {
     id: "project",
-    title: "Projects",
+    title: "Project",
   },
   {
     id: "education",

@@ -1,21 +1,31 @@
-import { Client } from "@notionhq/client";
 import { PROJECT } from "@/type/project";
 
-const notion = new Client({ auth: process.env.NOTION_TOKEN });
-
-export async function fetchNotionDB(): Promise<PROJECT[]> {
+export async function fetchNotionDb(): Promise<PROJECT[]> {
   try {
-    const response = await notion.databases.query({
-      database_id: process.env.NOTION_DATABASE_ID,
-      sorts: [
-        {
-          property: 'ID',
-          direction: 'ascending',
-        },
-      ],
+    const notionApiUrl = `https://api.notion.com/v1/databases/${process.env.NOTION_DATABASE_ID}/query`;
+
+    // fetch 요청에 cache 옵션을 추가
+    const response = await fetch(notionApiUrl, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${process.env.NOTION_TOKEN}`,
+        "Notion-Version": "2022-06-28",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        sorts: [
+          {
+            property: "ID",
+            direction: "ascending",
+          },
+        ],
+      }),
+      cache: 'force-cache',
     });
 
-    const formattedProjects = response.results.map((project: any) => ({
+    const data = await response.json();
+
+    const formattedProjects = data.results.map((project: any) => ({
       pageId: project.id,
       cover: project.cover?.external?.url || "",
       title: project.properties.Title?.title[0]?.plain_text || "",
@@ -35,4 +45,3 @@ export async function fetchNotionDB(): Promise<PROJECT[]> {
     throw error;
   }
 }
-
