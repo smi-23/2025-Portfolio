@@ -5,7 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 export default function AboutMe() {
   return (
     <Stack direction="column">
-      <Typography sx={{ fontSize: "1em" }}>
+      <Typography sx={{ fontSize: "1em", color: "#22d3d6" }}>
         <strong>Software Developer</strong>
       </Typography>
       <Typography sx={{ fontSize: "2em" }}>반갑습니다!</Typography>

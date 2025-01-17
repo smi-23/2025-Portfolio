@@ -18,7 +18,6 @@ export default function SectionLayout({ id, title, children, sx }: sectionLayout
         <div style={{ marginBottom: 40 }}>
           <Typography variant={"h4"} sx={{ fontWeight: 700 }}>
             {title}
-            <span style={{ color: "red" }}>.</span>
           </Typography>
         </div>
         {children}

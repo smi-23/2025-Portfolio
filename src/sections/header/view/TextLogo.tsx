@@ -1,3 +1,4 @@
+"use client";
 import { Typography } from "@mui/material";
 import Link from "next/link";
 
@@ -10,8 +11,7 @@ export default function TextLogo({ text }: TextLogoProps) {
     <Link
       href="/"
       style={{
-        textDecoration: "none", // 밑줄이 생기지 않게 함
-        marginRight: "8px",
+        textDecoration: "none",
       }}
     >
       <Typography
@@ -19,16 +19,12 @@ export default function TextLogo({ text }: TextLogoProps) {
           color: "#000000",
           fontWeight: 700,
           fontSize: 18,
+          "&:hover": {
+            color: "#22d3d6",
+          },
         }}
       >
         {text}
-        <span
-          style={{
-            color: "red", // 초록색으로 변경
-          }}
-        >
-          .
-        </span>
       </Typography>
     </Link>
   );

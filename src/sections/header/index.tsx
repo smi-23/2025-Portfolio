@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
-  const [showHeader, setShowHeader] = useState(false); // 섹션이 아직 없어서 임시로 true로 설정
+  const [showHeader, setShowHeader] = useState(false);
   const pathname = usePathname();
 
   // 스크롤 위치가 5px초과라면 setShowHeader가 true로 바뀌고 헤더가 보이게 됨
