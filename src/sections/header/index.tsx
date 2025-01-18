@@ -52,9 +52,7 @@ export default function Header() {
             padding: "0 16px",
           }}
         >
-          <div>
-            <TextLogo text={"About Me"} />
-          </div>
+          <TextLogo text={"About Me"} />
           <div style={{ display: "flex" }}>
             <HeaderMenu />
           </div>
