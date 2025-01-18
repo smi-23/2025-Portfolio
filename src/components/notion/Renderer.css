@@ -14,8 +14,9 @@
 .notion-inline-code {
   background-color: #f4f6f8;
   color: black;
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: "Pretendard", "Malgun Gothic", sans-serif;
 }
 
 .notion-quote {
@@ -28,7 +29,7 @@
   font-size: 35px;
   color: #00cccc;
   font-weight: bold;
-  padding-top: 50px !important;
+  padding-top: 40px !important;
 }
 
 .notion-h2 .notion-h-title {

@@ -1,8 +1,10 @@
 code {
-  padding: 3px 6px;
-  border: none;
+  padding: 3.2px 6.4px;
   border-radius: 3px;
-  background-color: #cce8f4;
+
+  background-color: #f4f6f8;
+  color: black;
+  font-weight: 500;
   font-size: 1rem;
   font-family: "Pretendard", "Malgun Gothic", sans-serif;
 }

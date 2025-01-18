@@ -19,7 +19,7 @@ export default function EducationDetail({ description, mdFilePath }: EducationDt
       >
         <Typography>{description}</Typography>
       </Stack>
-      <Stack sx={{ py: 2 }}>
+      <Stack sx={{ width: "100%", mt: 2, ml: 4 }}>
         <CustomMarkdown mdFilePath={mdFilePath} />
       </Stack>
     </Stack>

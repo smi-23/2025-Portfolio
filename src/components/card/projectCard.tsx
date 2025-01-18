@@ -18,8 +18,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card
       sx={{
-        mb: 7,
+        mb: 3,
         width: "90%",
+        height: 470, // 카드의 고정 높이 설정
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         borderRadius: 3,
         "&:hover": {
@@ -60,11 +61,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </Stack>
         {/* 작업 기간 */}
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
           작업 기간: {workPeriod.start} ~ {workPeriod.end || "현재"}
         </Typography>
         {/* 설명 */}
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{
+            mb: 2,
+            height: "60px", // 3줄 기준
+          }}
+        >
           {description}
         </Typography>
         {/* 깃허브 링크 */}

@@ -10,7 +10,7 @@ interface EducationTitleProps {
 
 export default function EducationTitle({ imgSrc, name, from, duration }: EducationTitleProps) {
   return (
-    <Stack sx={{}}>
+    <Stack sx={{ mr: 4 }}>
       <Image
         src={imgSrc}
         alt="educationImg"
