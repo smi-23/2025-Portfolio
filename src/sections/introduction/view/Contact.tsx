@@ -19,6 +19,7 @@ export default function Contact() {
         setSnackbar({ open: true, message: `${text} Copied to clipboard!` });
       }
     } catch (error) {
+      console.error(error);
       setSnackbar({ open: true, message: "Failed to copy!" });
     }
   };
