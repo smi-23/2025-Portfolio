@@ -14,7 +14,7 @@ export default function CustomMarkdown({ mdFilePath }: CustomMarkdownProps) {
     fetch(mdFilePath)
       .then((response) => response.text())
       .then((text) => setMarkdown(text));
-  }, []);
+  }, [mdFilePath]);
 
   return (
     <div style={{ width: "100%", justifyContent: "center", display: "flex" }}>

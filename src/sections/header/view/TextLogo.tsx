@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface TextLogoProps {
-  text: String;
+  text: string;
 }
 
 export default function TextLogo({ text }: TextLogoProps) {
