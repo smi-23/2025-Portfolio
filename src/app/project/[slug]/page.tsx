@@ -9,7 +9,7 @@ interface ProjectDetailPageProps {
 }
 
 export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
-  const { slug } = await params;
+  const { slug } = params;
   const projects: PROJECT[] = await fetchNotionDb();
   const project = projects.find((project) => project.slug === slug);
 
