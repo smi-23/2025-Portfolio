@@ -3,7 +3,7 @@ import { SvgIconComponent } from "@mui/icons-material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
 import EditNoteIcon from "@mui/icons-material/EditNote";
-import ContactPhoneIcon from "@mui/icons-material/ContactPhone";
+import PhoneIcon from '@mui/icons-material/Phone';
 
 export interface Social {
   id: string;
@@ -29,7 +29,7 @@ export const SOCIALS: Social[] = [
   {
     id: "phone",
     text: "01096967025",
-    icon: ContactPhoneIcon,
+    icon: PhoneIcon,
   },
 ]
 

@@ -10,7 +10,7 @@ export interface ProjectProps {
 
 export default function Project({ projects }: ProjectProps) {
   return (
-    <SectionLayout id="project" title="Project" sx={{ backgroundColor: "#efefef" }}>
+    <SectionLayout id="project" title="Project" sx={{ backgroundColor: "#f9f9f9" }}>
       <CustomCarousel>
         {projects.map((project) => (
           <Grid2 key={project.pageId} justifyItems={"center"}>

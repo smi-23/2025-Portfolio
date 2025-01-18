@@ -12,14 +12,15 @@
 }
 
 .notion-inline-code {
-  background-color: #efefef;
+  background-color: #f4f6f8;
   color: black;
   font-size: 15px;
+  font-weight: bold;
 }
 
 .notion-quote {
   border-color: #00cccc;
-  background-color: #efefef;
+  background-color: #f4f6f8;
   margin-top: 26.4px;
 }
 

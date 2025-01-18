@@ -39,17 +39,22 @@ export default function Header() {
           backgroundColor: "white",
           borderBottom: "1px solid",
           borderColor: "#d1d1d1",
-          justifyContent: "center",
+          justifyItems: "center",
         }}
       >
         <Toolbar
           sx={{
-            display: "flex", // 수평으로 배치
-            justifyContent: "space-between", // 왼쪽과 오른쪽 끝으로 요소 배치
+            display: "flex",
+            justifyContent: "space-between",
+            width: "100%",
+            maxWidth: "lg",
+            mx: "auto",
+            padding: "0 16px",
           }}
         >
-          {/* 홈 버튼을 뒤에 추가하는게 좋겠네 */}
-          <TextLogo text={"About Me"} />
+          <div>
+            <TextLogo text={"About Me"} />
+          </div>
           <div style={{ display: "flex" }}>
             <HeaderMenu />
           </div>

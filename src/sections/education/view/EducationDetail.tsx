@@ -13,8 +13,8 @@ export default function EducationDetail({ description, mdFilePath }: EducationDt
         sx={{
           width: "100%",
           p: 3,
-
-          backgroundColor: "#efefef",
+          backgroundColor: "#F4F6F8",
+          borderLeft: "4px solid #00cccc",
         }}
       >
         <Typography>{description}</Typography>

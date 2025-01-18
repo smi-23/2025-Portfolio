@@ -19,7 +19,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     <Card
       sx={{
         mb: 7,
-        width: "94%",
+        width: "90%",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         borderRadius: 3,
         "&:hover": {
@@ -29,9 +29,22 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       }}
     >
       {/* 커버 이미지 */}
-
-      <Link href={`/project/${slug}`}>
-        {cover && <CardMedia component="img" image={cover} alt="Project Cover" sx={{ height: 200 }} />}
+      <Link
+        href={`/project/${slug}`}
+        style={{
+          outline: "none",
+        }}
+      >
+        {cover && (
+          <CardMedia
+            component={"img"}
+            image={cover}
+            alt="Project Cover"
+            sx={{
+              height: 200,
+            }}
+          />
+        )}
       </Link>
       <CardContent>
         {/* 타이틀 */}

@@ -25,13 +25,14 @@ export default function Contact() {
 
   return (
     <>
-      <Stack direction="row" spacing={3} alignItems="center">
+      <Stack direction="row" spacing={2} alignItems="center">
         {SOCIALS.map((social: Social) => (
           <TooltipIcon
             key={social.id}
             title={social.id}
             Icon={social.icon}
             onClick={() => copyToClipboard(social.text)}
+            sx={{ fontSize: 32 }}
           />
         ))}
         <Snackbar

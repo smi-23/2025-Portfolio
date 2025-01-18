@@ -13,10 +13,10 @@ export default function Introduction() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        sx={{ height: "100vh", mx: "auto", paddingBottom: 8, gap: 10 }}
+        sx={{ height: "100vh", mx: "auto", pb: 10, gap: 10 }}
       >
         <Grid alignItems="center">
-          <Stack direction="column" spacing={2} alignItems="center">
+          <Stack direction="column" spacing={2} sx={{ mt: 7 }}>
             <AboutMe />
             <Contact />
           </Stack>
