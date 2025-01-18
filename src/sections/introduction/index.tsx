@@ -2,7 +2,7 @@
 import Grid from "@mui/material/Grid2";
 import ProfilePicture from "./view/ProfilePicture";
 import AboutMe from "./view/AboutMe";
-import Contact from "./view/Contact";
+import Contact from "./view/contact/Contact";
 import { Stack } from "@mui/material";
 
 export default function Introduction() {
