@@ -4,11 +4,11 @@ import Renderer from "@/components/notion/Renderer";
 import { PROJECT } from "@/type/project";
 import { notFound } from "next/navigation";
 
-// interface ProjectDetailPageProps {
-//   params: { slug: string };
-// }
+interface ProjectDetailPageProps {
+  params: Promise<{ slug: string }>;
+}
 
-export default async function ProjectDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
   const { slug } = await params;
   const projects: PROJECT[] = await fetchNotionDb();
   const project = projects.find((project) => project.slug === slug);
