@@ -20,7 +20,7 @@ export async function fetchNotionDb(): Promise<PROJECT[]> {
           },
         ],
       }),
-      cache: 'force-cache',
+      // cache: 'force-cache',
     });
 
     const data = await response.json();
