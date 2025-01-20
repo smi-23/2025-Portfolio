@@ -12,25 +12,25 @@ export interface projectDetailProps {
 }
 
 export default function ProjectDetail({ project }: projectDetailProps) {
-  const { githubUrl, youtubeUrl, bloglUrl } = project;
+  const { githubUrl, youtubeUrl, blogUrl } = project;
 
   const links = [
     { title: "Github", url: githubUrl, icon: GitHubIcon },
     { title: "Youtube", url: youtubeUrl, icon: YouTubeIcon },
-    { title: "Blog", url: bloglUrl, icon: ArticleIcon },
+    { title: "Blog", url: blogUrl, icon: ArticleIcon },
   ];
 
   return (
     <FloatingButton>
       {links.map(
-        ({ title, url, icon }) =>
-          url && (
+        (link) =>
+          link.url && (
             <TooltipIcon
-              key={title}
-              title={title}
-              Icon={icon}
+              key={link.title}
+              title={link.title}
+              Icon={link.icon}
               onClick={() => {
-                window.open(url, "_blank");
+                window.open(link.url, "_blank");
               }}
               tooltipPlacement={"right"}
             />

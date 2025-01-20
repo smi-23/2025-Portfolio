@@ -21,6 +21,8 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   const pageId = project.pageId;
   const data = await FetchNotionPage({ pageId });
 
+  console.log("url이 제대로 들어가 있는지 확인용", project);
+
   return (
     <main>
       <ProjectDetail project={project} />

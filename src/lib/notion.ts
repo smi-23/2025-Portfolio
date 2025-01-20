@@ -40,7 +40,7 @@ export async function fetchNotionDb(): Promise<PROJECT[]> {
       tags: project.properties.Tag?.multi_select?.map((tag: { name: string }) => tag.name) || [],
       slug: project.properties.Slug?.rich_text[0]?.plain_text || "",
     }));
-    console.log(formattedProjects)
+
     return formattedProjects;
   } catch (error) {
     console.error("Error fetching Notion data:", error);
