@@ -17,8 +17,8 @@ export default function CustomMarkdown({ mdFilePath }: CustomMarkdownProps) {
   }, [mdFilePath]);
 
   return (
-    <div style={{ width: "100%", justifyContent: "center", display: "flex" }}>
-      <div style={{ maxWidth: "800px", width: "100%" }}>
+    <div>
+      <div>
         <ReactMarkdown>{markdown}</ReactMarkdown>
       </div>
     </div>

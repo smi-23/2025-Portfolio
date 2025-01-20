@@ -19,7 +19,7 @@ export default function TextLogo({ text }: TextLogoProps) {
         justifyItems: "center",
       }}
     >
-      <Image src={"/assets/image/logo.png"} alt="logoImg" width={40} height={40} />
+      <Image src={"/assets/icon/portfolio.png"} alt="logoImg" width={40} height={40} />
       <Typography
         sx={{
           color: "#000000",
