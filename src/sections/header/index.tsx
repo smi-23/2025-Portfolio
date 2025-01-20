@@ -27,7 +27,7 @@ export default function Header() {
     // 스크롤 이벤트 발생 시 handleHeaderByScroll 함수 호출
     window.addEventListener("scroll", handleHeaderByScroll);
     return () => window.removeEventListener("scroll", handleHeaderByScroll);
-  }, [pathname]);
+  }, []);
 
   return (
     showHeader && (

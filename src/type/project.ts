@@ -50,6 +50,8 @@ export type PROJECT = {
   title: string;
   description: string;
   githubUrl: string;
+  youtubeUrl: string;
+  bloglUrl: string;
   workPeriod: {
     start: string;
     end: string;

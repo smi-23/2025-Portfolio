@@ -3,6 +3,7 @@ import { FetchNotionPage } from "@/lib/notionPage";
 import Renderer from "@/components/notion/Renderer";
 import { PROJECT } from "@/type/project";
 import { notFound } from "next/navigation";
+import ProjectDetail from "@/sections/project-detail";
 
 interface ProjectDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -22,6 +23,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
   return (
     <main>
+      <ProjectDetail project={project} />
       <Renderer recordMap={data} rootPageId={pageId} />
     </main>
   );

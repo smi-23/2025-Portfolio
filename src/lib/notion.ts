@@ -31,6 +31,8 @@ export async function fetchNotionDb(): Promise<PROJECT[]> {
       title: project.properties.Title?.title[0]?.plain_text || "",
       description: project.properties.Description?.rich_text[0]?.plain_text || "",
       githubUrl: project.properties.Github?.url || "",
+      youtubeUrl: project.properties.Youtube?.url || "",
+      blogUrl: project.properties.Blog?.url || "",
       workPeriod: {
         start: project.properties.WorkPeriod?.date?.start || "",
         end: project.properties.WorkPeriod?.date?.end || "",
@@ -38,7 +40,7 @@ export async function fetchNotionDb(): Promise<PROJECT[]> {
       tags: project.properties.Tag?.multi_select?.map((tag: { name: string }) => tag.name) || [],
       slug: project.properties.Slug?.rich_text[0]?.plain_text || "",
     }));
-
+    console.log(formattedProjects)
     return formattedProjects;
   } catch (error) {
     console.error("Error fetching Notion data:", error);
