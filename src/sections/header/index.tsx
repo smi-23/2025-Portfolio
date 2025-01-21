@@ -2,12 +2,26 @@
 import { AppBar, Toolbar } from "@mui/material";
 import TextLogo from "./view/TextLogo";
 import HeaderMenu from "./view/Menu";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
+import { useColorScheme } from "@mui/material/styles";
+import TooltipIcon from "@/components/icon/tooltipIcon";
+
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import BedtimeRoundedIcon from "@mui/icons-material/BedtimeRounded";
+
 export default function Header() {
+  const { mode, systemMode, setMode } = useColorScheme();
   const [showHeader, setShowHeader] = useState(false);
   const pathname = usePathname();
+
+  const toggleDarkTheme = React.useCallback(() => {
+    if (mode) {
+      const currMode = mode === "dark" ? "light" : "dark";
+      setMode(currMode);
+    }
+  }, [mode, systemMode]);
 
   // 스크롤 위치가 5px초과라면 setShowHeader가 true로 바뀌고 헤더가 보이게 됨
   const handleHeaderByScroll = () => {
@@ -53,8 +67,16 @@ export default function Header() {
           }}
         >
           <TextLogo text={"About Me"} />
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             <HeaderMenu />
+            <TooltipIcon
+              title={"theme button"}
+              Icon={mode === "dark" ? WbSunnyIcon : BedtimeRoundedIcon}
+              onClick={() => {
+                toggleDarkTheme();
+              }}
+              sx={{ color: mode === "dark" ? "white" : "black" }}
+            />
           </div>
         </Toolbar>
       </AppBar>

@@ -1,5 +1,5 @@
 "use client";
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,6 +8,7 @@ interface TextLogoProps {
 }
 
 export default function TextLogo({ text }: TextLogoProps) {
+  const theme = useTheme();
   return (
     <Link
       href="/"
@@ -22,11 +23,14 @@ export default function TextLogo({ text }: TextLogoProps) {
       <Image src={"/assets/icon/portfolio.png"} alt="logoImg" width={40} height={40} />
       <Typography
         sx={{
-          color: "#000000",
+          color: theme.palette.text.primary,
           fontWeight: 700,
           fontSize: 18,
           "&:hover": {
             color: "#00cccc",
+          },
+          "&:active": {
+            color: theme.palette.text.primary,
           },
         }}
       >

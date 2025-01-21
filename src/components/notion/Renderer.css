@@ -1,14 +1,14 @@
-.notion-title {
+/* .notion-title {
   display: none !important;
-}
+} */
 
-.notion-page-cover-wrapper {
+/* .notion-page-cover-wrapper {
   display: none !important;
-}
+} */
 
-.notion-header {
+/* .notion-header {
   display: none !important;
-}
+} */
 
 .notion-inline-code {
   background-color: #f4f6f8;
@@ -18,17 +18,27 @@
   font-family: "Pretendard", "Malgun Gothic", sans-serif;
 }
 
+.dark-mode .notion-inline-code {
+  background-color: var(--mui-palette-action-selected);
+  color: white;
+}
+
 .notion-quote {
   border-color: #00cccc;
   background-color: #f4f6f8;
   margin-top: 26.4px;
+  font-size: 1rem;
+  padding: 24px;
+}
+
+.dark-mode .notion-quote {
+  background-color: var(--mui-palette-action-selected);
 }
 
 .notion-h1 {
   font-size: 35px;
-  color: black;
   font-weight: bold;
-  padding-top: 40px !important;
+  padding-top: 50px;
 }
 
 .notion-h2 .notion-h-title {
@@ -43,5 +53,5 @@
 
 .notion-hr {
   margin-top: 10px;
-  border-top: 1px #efefef solid !important;
+  border-top: 1px #efefef solid;
 }
