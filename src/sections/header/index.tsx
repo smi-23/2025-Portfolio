@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 
 import { useColorScheme } from "@mui/material/styles";
 import TooltipIcon from "@/components/icon/tooltipIcon";
-
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import BedtimeRoundedIcon from "@mui/icons-material/BedtimeRounded";
 
@@ -17,9 +16,10 @@ export default function Header() {
   const pathname = usePathname();
 
   const toggleDarkTheme = React.useCallback(() => {
-    if (mode) {
-      const currMode = mode === "dark" ? "light" : "dark";
-      setMode(currMode);
+    if (mode === "system") {
+      setMode(systemMode === "dark" ? "light" : "dark");
+    } else {
+      setMode(mode === "dark" ? "light" : "dark");
     }
   }, [mode, systemMode]);
 
@@ -71,11 +71,11 @@ export default function Header() {
             <HeaderMenu />
             <TooltipIcon
               title={"theme button"}
-              Icon={mode === "dark" ? WbSunnyIcon : BedtimeRoundedIcon}
+              Icon={mode === "dark" || systemMode === "dark" ? WbSunnyIcon : BedtimeRoundedIcon}
               onClick={() => {
                 toggleDarkTheme();
               }}
-              sx={{ color: mode === "dark" ? "white" : "black" }}
+              sx={{ color: mode === "dark" || systemMode === "dark" ? "white" : "black" }}
             />
           </div>
         </Toolbar>
