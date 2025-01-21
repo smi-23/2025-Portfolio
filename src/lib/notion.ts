@@ -20,7 +20,7 @@ export async function fetchNotionDb(): Promise<PROJECT[]> {
           },
         ],
       }),
-      next: { revalidate: 360 }
+      next: { revalidate: 3600 }
     });
 
     const data = await response.json();
