@@ -12,13 +12,14 @@ export const TECH: TechInfo[] = [
     icon: "/assets/icon/Spring.png"
   },
   {
-    id: "NextJS",
-    icon: "/assets/icon/Next.js.png"
-  },
-  {
     id: "TypeScript",
     icon: "/assets/icon/TypeScript.png"
   },
+  {
+    id: "NextJS",
+    icon: "/assets/icon/Next.js.png"
+  },
+
   {
     id: "MySql",
     icon: "/assets/icon/MySQL.png"

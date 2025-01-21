@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PROJECT } from "@/type/project";
 import TooltipIcon from "../icon/tooltipIcon";
 import { useRouter } from "next/navigation";
-import { Card, CardContent, Typography, Chip, Stack, CardMedia } from "@mui/material";
+import { Card, CardContent, Typography, Chip, Stack, CardMedia, useTheme } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import PlagiarismIcon from "@mui/icons-material/Plagiarism";
 
@@ -12,8 +12,11 @@ export interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const theme = useTheme();
   const router = useRouter();
   const { cover, title, description, githubUrl, workPeriod, tags, slug } = project;
+
+  const textColor = theme.palette.mode === "dark" ? "rgba(255, 255, 255, 0.7)" : "rgba(0, 0, 0, 0.54)";
 
   return (
     <Card
@@ -61,13 +64,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </Stack>
         {/* 작업 기간 */}
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+        <Typography variant="body2" color={textColor} sx={{ mb: 2 }}>
           작업 기간: {workPeriod.start} ~ {workPeriod.end || "현재"}
         </Typography>
         {/* 설명 */}
         <Typography
           variant="body2"
-          color="text.secondary"
+          color={textColor}
           sx={{
             mb: 2,
             height: "60px", // 3줄 기준
