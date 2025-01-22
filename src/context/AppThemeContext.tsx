@@ -10,6 +10,10 @@ export default function AppThemeProvider({ children }: { children: ReactNode }) 
   const theme = useMemo(() => {
     return responsiveFontSizes(
       createTheme({
+        typography: {
+          // 노션 페이지와 같은 폰트 적용
+          fontFamily: `ui-sans-serif, system-ui, apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"`,
+        },
         cssVariables: {
           colorSchemeSelector: "class",
           disableCssColorScheme: true,

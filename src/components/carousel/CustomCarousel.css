@@ -1,0 +1,11 @@
+/* 라이트 모드 */
+.light .slick-next:before,
+.light .slick-prev:before {
+  color: var(--mui-palette-grey-900);
+}
+
+/* 다크 모드 */
+.dark .slick-next:before,
+.dark .slick-prev:before {
+  color: var(--mui-palette-grey-300);
+}

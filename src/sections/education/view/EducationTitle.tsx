@@ -10,21 +10,30 @@ interface EducationTitleProps {
 
 export default function EducationTitle({ imgSrc, name, from, duration }: EducationTitleProps) {
   return (
-    <Stack sx={{ mr: 4 }}>
-      <Image
-        src={imgSrc}
-        alt="educationImg"
-        width={150}
-        height={150}
-        style={{
-          borderRadius: "25px",
-          marginBottom: "15px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        }}
-      />
-      <Typography sx={{ fontWeight: 700, fontSize: 25 }}>{name}</Typography>
-      <Typography variant={"body1"}>주관: {from}</Typography>
-      <Typography variant={"body1"}>{duration}</Typography>
+    <Stack
+      direction={{ xs: "row", sm: "column" }}
+      alignItems={{ xs: "center", sm: "flex-start" }}
+      justifyContent={{ xs: "center", sm: "flex" }}
+      spacing={2}
+      sx={{}}
+    >
+        <Image
+          src={imgSrc}
+          alt="educationImg"
+          width={150}
+          height={150}
+          style={
+            {
+              borderRadius: "25px",
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+            }
+          }
+        />
+      <Stack>
+        <Typography sx={{ fontWeight: 700, fontSize: 25 }}>{name}</Typography>
+        <Typography variant={"body1"}>주관: {from}</Typography>
+        <Typography variant={"body1"}>{duration}</Typography>
+      </Stack>
     </Stack>
   );
 }

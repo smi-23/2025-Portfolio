@@ -30,7 +30,6 @@ export default function TechStack() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              padding: "15px",
               width: 70,
               height: 70,
               boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",

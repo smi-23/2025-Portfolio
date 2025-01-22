@@ -12,16 +12,24 @@ export default function EducationBox({ education }: EducationBoxProps) {
   return (
     <Grid2 container direction={"row"} maxWidth={"md"} sx={{}}>
       <Grid2
-        sx={{
-          borderRight: "1px solid",
-          borderColor: "#d1d1d1",
+        size={{
           xs: 12,
           sm: 3,
+        }}
+        sx={{
+          pb: { xs: 3, sm: 0 },
+          borderRight: { xs: "0px", sm: "1px solid" },
+          borderColor: { xs: "none", sm: "#d1d1d1" },
         }}
       >
         <EducationTitle imgSrc={imgSrc} name={name} from={from} duration={duration} />
       </Grid2>
-      <Grid2 size={{ xs: 12, sm: 9 }} sx={{}}>
+      <Grid2
+        size={{
+          xs: 12,
+          sm: 9,
+        }}
+      >
         <EducationDetail description={description} mdFilePath={mdFilePath} />
       </Grid2>
     </Grid2>

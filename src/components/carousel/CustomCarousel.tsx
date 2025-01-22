@@ -1,7 +1,8 @@
 "use client";
 import React, { ReactNode } from "react";
-import { Grid2 } from "@mui/material";
+import { Container, Grid2 } from "@mui/material";
 import CustomArrow from "../arrow/CustomNextIcon";
+import "./CustomCarousel.css";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -18,15 +19,31 @@ export default function CustomCarousel({ children }: CustomCarouselProps) {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
-    prevArrow: <CustomArrow direction="left" />,
-    nextArrow: <CustomArrow direction="right" />,
+    // prevArrow: <CustomArrow direction="left" />,
+    // nextArrow: <CustomArrow direction="right" />,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
     <>
-      <Grid2 sx={{ maxWidth: "lg" }}>
+      <Container className="slider-container" sx={{ maxWidth: "80%" }}>
         <Slider {...settings}>{children}</Slider>
-      </Grid2>
+      </Container>
     </>
   );
 }

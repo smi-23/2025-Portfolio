@@ -21,7 +21,7 @@ export default function Contact() {
 
   return (
     <>
-      <Stack direction="row" spacing={2} alignItems="center">
+      <Stack direction="row" spacing={2} justifyContent={{ xs: "center", sm: "flex-start" }} sx={{ py: 2 }}>
         {SOCIALS.map((social: Social) => (
           <TooltipIcon
             key={social.id}

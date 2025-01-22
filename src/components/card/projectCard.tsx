@@ -21,8 +21,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card
       sx={{
-        mb: 3,
         width: "90%",
+        mb: 1,
         height: 470, // 카드의 고정 높이 설정
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         borderRadius: 3,
