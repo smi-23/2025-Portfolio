@@ -13,7 +13,10 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
     rules: {
-      "@typescript-eslint/no-explicit-any": "off", // 규칙 비활성화
+      "@typescript-eslint/no-explicit-any": "off",
+      // 사용하지 않는 임포트 등에 관한 에러 처리
+      // "no-unused-vars": "off",
+      // "@typescript-eslint/no-unused-vars": "warn",
     },
   },
 ];

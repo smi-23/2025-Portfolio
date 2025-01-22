@@ -1,7 +1,6 @@
 "use client";
 import React, { ReactNode } from "react";
-import { Container, Grid2 } from "@mui/material";
-import CustomArrow from "../arrow/CustomNextIcon";
+import { Container} from "@mui/material";
 import "./CustomCarousel.css";
 
 import Slider from "react-slick";
