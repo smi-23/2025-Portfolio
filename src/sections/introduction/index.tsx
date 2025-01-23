@@ -11,11 +11,11 @@ export default function Introduction() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        spacing={2}
+        spacing={{ xs: 0, sm: 5, md: 10 }}
         sx={{
-          height: { xs: "", sm: "100vh" },
+          height: { xs: "100vh" },
           mx: "auto",
-          py: 10,
+          py: 6,
           px: 1,
         }}
       >

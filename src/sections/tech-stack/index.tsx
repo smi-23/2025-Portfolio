@@ -15,9 +15,9 @@ export default function TechStack() {
     >
       <Grid2
         container
-        spacing={6}
+        spacing={{ xs: 2, sm: 7 }}
         sx={{
-          maxWidth: 500,
+          maxWidth: { xs: 400, sm: 550 },
           display: "flex",
           justifyContent: "center",
           backgroundColor: theme.palette.mode === "dark" ? "#333333" : "#f9f9f9",

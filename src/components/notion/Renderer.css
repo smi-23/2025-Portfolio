@@ -10,12 +10,16 @@
   display: none !important;
 } */
 
+.notion {
+  font-family: var(--font-pretendard);
+}
+
 .notion-inline-code {
   background-color: #f4f6f8;
   color: black;
   font-size: 1em;
   font-weight: 500;
-  font-family: "Pretendard", "Malgun Gothic", sans-serif;
+  font-family: var(--font-pretendard);
 }
 
 .dark-mode .notion-inline-code {

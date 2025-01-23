@@ -4,7 +4,7 @@ code {
   background-color: #f4f6f8;
   font-weight: 500;
   font-size: 1rem;
-  font-family: "Pretendard", "Malgun Gothic", sans-serif;
+  font-family: var(--font-pretendard);
 }
 
 @media (prefers-color-scheme: dark) {

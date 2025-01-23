@@ -1,5 +1,5 @@
 "use client";
-import { AppBar, Toolbar } from "@mui/material";
+import { AppBar, Box, Toolbar, useMediaQuery, useTheme } from "@mui/material";
 import TextLogo from "./view/TextLogo";
 import HeaderMenu from "./view/Menu";
 import React, { useEffect, useState } from "react";
@@ -14,6 +14,8 @@ export default function Header() {
   const { mode, systemMode, setMode } = useColorScheme();
   const [showHeader, setShowHeader] = useState(false);
   const pathname = usePathname();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.up("sm"));
 
   const toggleDarkTheme = React.useCallback(() => {
     if (mode === "system") {
@@ -53,22 +55,19 @@ export default function Header() {
           backgroundColor: "white",
           borderBottom: "1px solid",
           borderColor: "#d1d1d1",
-          justifyItems: "center",
         }}
       >
         <Toolbar
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            width: "100%",
             maxWidth: "lg",
             mx: "auto",
-            padding: "0 16px",
           }}
         >
           <TextLogo text={"About Me"} />
           <div style={{ display: "flex", alignItems: "center" }}>
-            <HeaderMenu />
+            {isMobile && <HeaderMenu />}
             <TooltipIcon
               title={"theme button"}
               Icon={mode === "dark" || systemMode === "dark" ? WbSunnyIcon : BedtimeRoundedIcon}
