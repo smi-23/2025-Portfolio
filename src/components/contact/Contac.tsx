@@ -1,13 +1,11 @@
 "use client";
 import { Stack, StackProps, useTheme } from "@mui/material";
 import { SOCIALS, Social } from "@/data/social";
-import TooltipIcon from "@/components/icon/TooltipIcon";
 import { ToastContainer, toast } from "react-toastify";
 import "./Toastify.css";
+import TooltipIcon from "../icon/TooltipIcon";
 
-interface ContactProps extends StackProps {}
-
-export default function Contact({ sx, ...rest }: ContactProps) {
+export default function Contact({ sx, ...rest }: StackProps) {
   const muiTheme = useTheme();
   const isDark = muiTheme.palette.mode === "dark" ? "dark" : "light";
 
