@@ -23,7 +23,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       sx={{
         width: "90%",
         mb: 1,
-        height: 470, // 카드의 고정 높이 설정
+        height: 470,
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         borderRadius: 3,
         "&:hover": {
@@ -45,7 +45,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             image={cover}
             alt="Project Cover"
             sx={{
-              height: 200,
+              height: 230,
             }}
           />
         )}
@@ -53,18 +53,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <CardContent>
         {/* 타이틀 */}
         <Link href={`/project/${slug}`} style={{ textDecoration: "none", color: "inherit" }}>
-          <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
+          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
             {title}
           </Typography>
         </Link>
         {/* 태그 */}
-        <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
+        <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
           {tags.map((tag) => (
             <Chip key={tag} label={tag} size="small" />
           ))}
         </Stack>
         {/* 작업 기간 */}
-        <Typography variant="body2" color={textColor} sx={{ mb: 2 }}>
+        <Typography variant="body2" color={textColor} sx={{ mb: 1 }}>
           작업 기간: {workPeriod.start} ~ {workPeriod.end || "현재"}
         </Typography>
         {/* 설명 */}
@@ -72,7 +72,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           variant="body2"
           color={textColor}
           sx={{
-            mb: 2,
+            mb: 1,
             height: "60px", // 3줄 기준
           }}
         >

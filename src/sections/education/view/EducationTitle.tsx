@@ -17,18 +17,16 @@ export default function EducationTitle({ imgSrc, name, from, duration }: Educati
       spacing={2}
       sx={{}}
     >
-        <Image
-          src={imgSrc}
-          alt="educationImg"
-          width={150}
-          height={150}
-          style={
-            {
-              borderRadius: "25px",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-            }
-          }
-        />
+      <Image
+        src={imgSrc}
+        alt="educationImg"
+        width={130}
+        height={130}
+        style={{
+          borderRadius: "25px",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+        }}
+      />
       <Stack>
         <Typography sx={{ fontWeight: 700, fontSize: 25 }}>{name}</Typography>
         <Typography variant={"body1"}>주관: {from}</Typography>

@@ -1,10 +1,25 @@
 import { PROJECT } from "@/type/project";
 
+const transformCoverUrl = (cover: any, pageId: string): string => {
+  if (cover?.external?.url) {
+    return cover.external.url;
+  } else if (cover?.file?.url) {
+    const encodedUrl = encodeURIComponent(cover.file.url);
+
+    const match = cover.file.url.match(/(?:spaceId=)([a-zA-Z0-9-]+)/);
+    const spaceId = match ? match[1] : "";  // match가 null일 경우 빈 문자열로 처리
+
+    // 새로운 URL 생성
+    const newCoverUrl = `https://superficial-amber-09e.notion.site/image/${encodedUrl}?table=block&id=${pageId}&spaceId=${spaceId}&width=2000&userId=&cache=v2`;
+    return newCoverUrl;
+  }
+  return "";
+};
+
 export async function fetchNotionDb(): Promise<PROJECT[]> {
   try {
     const notionApiUrl = `https://api.notion.com/v1/databases/${process.env.NOTION_DATABASE_ID}/query`;
 
-    // fetch 요청에 cache 옵션을 추가
     const response = await fetch(notionApiUrl, {
       method: "POST",
       headers: {
@@ -20,6 +35,7 @@ export async function fetchNotionDb(): Promise<PROJECT[]> {
           },
         ],
       }),
+      // fetch 요청에 cache 옵션을 추가
       next: { revalidate: 3600 }
     });
 
@@ -27,7 +43,7 @@ export async function fetchNotionDb(): Promise<PROJECT[]> {
 
     const formattedProjects = data.results.map((project: any) => ({
       pageId: project.id,
-      cover: project.cover?.external?.url || "",
+      cover: transformCoverUrl(project.cover, project.id),
       title: project.properties.Title?.title[0]?.plain_text || "",
       description: project.properties.Description?.rich_text[0]?.plain_text || "",
       githubUrl: project.properties.Github?.url || "",

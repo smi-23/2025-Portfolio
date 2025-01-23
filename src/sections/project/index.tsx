@@ -20,9 +20,13 @@ export default function Project({ projects }: ProjectProps) {
       sx={{ backgroundColor: theme.palette.mode === "dark" ? "#333333" : "#f9f9f9" }}
     >
       {isMobile ? (
-        <Grid2 container direction="column" spacing={2} sx={{ maxWidth: "100%" }}>
+        <Grid2 container direction="column" spacing={2} sx={{ maxWidth: "100%" }} justifyContent={"center"}>
           {projects.map((project) => (
-            <Grid2 key={project.pageId} justifyItems={"center"}>
+            <Grid2
+              key={project.pageId}
+              sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+              size={{ xs: 12, md: 6, lg: 4 }}
+            >
               <ProjectCard project={project} />
             </Grid2>
           ))}
