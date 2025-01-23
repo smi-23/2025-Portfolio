@@ -1,5 +1,5 @@
 "use client";
-import { AppBar, Box, Toolbar, useMediaQuery, useTheme } from "@mui/material";
+import { AppBar, Toolbar, useMediaQuery, useTheme } from "@mui/material";
 import TextLogo from "./view/TextLogo";
 import HeaderMenu from "./view/Menu";
 import React, { useEffect, useState } from "react";
