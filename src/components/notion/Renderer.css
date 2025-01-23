@@ -22,7 +22,7 @@
   font-family: var(--font-pretendard);
 }
 
-.dark-mode .notion-inline-code {
+.dark .notion-inline-code {
   background-color: var(--mui-palette-action-selected);
   color: white;
 }
@@ -35,7 +35,7 @@
   padding: 16px;
 }
 
-.dark-mode .notion-quote {
+.dark .notion-quote {
   background-color: var(--mui-palette-action-selected);
 }
 

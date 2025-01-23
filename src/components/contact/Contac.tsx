@@ -1,16 +1,22 @@
 "use client";
-import { Stack } from "@mui/material";
+import { Stack, StackProps, useTheme } from "@mui/material";
 import { SOCIALS, Social } from "@/data/social";
-import TooltipIcon from "@/components/icon/tooltipIcon";
+import TooltipIcon from "@/components/icon/TooltipIcon";
 import { ToastContainer, toast } from "react-toastify";
+import "./Toastify.css";
 
-export default function Contact() {
+interface ContactProps extends StackProps {}
+
+export default function Contact({ sx, ...rest }: ContactProps) {
+  const muiTheme = useTheme();
+  const isDark = muiTheme.palette.mode === "dark" ? "dark" : "light";
+
   const notifyEvent = (text: string) => {
     try {
       if (text.startsWith("https://")) {
         window.open(text, "_blank");
       } else {
-        toast.success(`${text}가 복사되었습니다.`);
+        toast.success(`${text}가 복사되었습니다.`, { theme: `${isDark}` });
       }
     } catch (error) {
       console.error(error);
@@ -20,12 +26,7 @@ export default function Contact() {
 
   return (
     <>
-      <Stack
-        direction="row"
-        spacing={2}
-        justifyContent={{ xs: "center", sm: "center" }}
-        sx={{ pl: 2 }}
-      >
+      <Stack direction="row" spacing={2} sx={{ ...sx }} {...rest}>
         {SOCIALS.map((social: Social) => (
           <TooltipIcon
             key={social.id}

@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { useColorScheme } from "@mui/material/styles";
-import TooltipIcon from "@/components/icon/tooltipIcon";
+import TooltipIcon from "@/components/icon/TooltipIcon";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import BedtimeRoundedIcon from "@mui/icons-material/BedtimeRounded";
 

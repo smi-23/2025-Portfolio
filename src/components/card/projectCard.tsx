@@ -1,13 +1,13 @@
 "use client";
 import Link from "next/link";
 import { PROJECT } from "@/type/project";
-import TooltipIcon from "../icon/tooltipIcon";
+import TooltipIcon from "../icon/TooltipIcon";
 import { useRouter } from "next/navigation";
 import { Card, CardContent, Typography, Chip, Stack, CardMedia, useTheme } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import PlagiarismIcon from "@mui/icons-material/Plagiarism";
 
-export interface ProjectCardProps {
+interface ProjectCardProps {
   project: PROJECT;
 }
 

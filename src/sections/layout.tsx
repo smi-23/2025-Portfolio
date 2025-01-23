@@ -1,7 +1,7 @@
 import { Stack, StackProps, Typography } from "@mui/material";
 import React, { ReactNode } from "react";
 
-export interface sectionLayoutProps extends StackProps {
+interface sectionLayoutProps extends StackProps {
   id: string;
   title: string;
   children: ReactNode;

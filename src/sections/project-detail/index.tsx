@@ -1,13 +1,13 @@
 "use client";
 import { PROJECT } from "@/type/project";
 import FloatingButton from "@/components/button/FloatingButton";
-import TooltipIcon from "@/components/icon/tooltipIcon";
+import TooltipIcon from "@/components/icon/TooltipIcon";
 
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ArticleIcon from "@mui/icons-material/Article";
 
-export interface projectDetailProps {
+interface projectDetailProps {
   project: PROJECT;
 }
 

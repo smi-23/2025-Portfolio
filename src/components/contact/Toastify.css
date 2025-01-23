@@ -1,7 +1,5 @@
 :root {
-  /* 성공 토스트 색상 */
   --toastify-color-success: #00cccc;
-  /* 성공 토스트 텍스트 색상 */
   --toastify-text-color-success: black;
   --toastify-toast-width: 350px;
   --toastify-toast-offset: 16px;

@@ -1,20 +1,17 @@
 code {
   padding: 3.2px 6.4px;
   border-radius: 3px;
-  background-color: #f4f6f8;
   font-weight: 500;
   font-size: 1rem;
   font-family: var(--font-pretendard);
 }
 
-@media (prefers-color-scheme: dark) {
-  code {
-    background-color: var(--mui-palette-action-selected);
-  }
+.dark code {
+  background-color: var(--mui-palette-action-selected);
+  color: white;
 }
 
-@media (prefers-color-scheme: light) {
-  code {
-    color: black;
-  }
+.light code {
+  background-color: #f4f6f8;
+  color: black;
 }

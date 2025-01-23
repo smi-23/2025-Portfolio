@@ -1,7 +1,7 @@
 import Grid from "@mui/material/Grid2";
 import ProfilePicture from "./view/ProfilePicture";
 import AboutMe from "./view/AboutMe";
-import Contact from "./view/contact/Contact";
+import Contact from "@/components/contact/Contac";
 
 export default function Introduction() {
   return (
@@ -15,13 +15,13 @@ export default function Introduction() {
         sx={{
           height: { xs: "100vh" },
           mx: "auto",
-          py: 6,
+          py: 7,
           px: 1,
         }}
       >
         <Grid>
           <AboutMe />
-          <Contact />
+          <Contact justifyContent={{ xs: "center", sm: "flex-start" }} pl={{ xs: 2, sm: 0 }} sx={{ py: 2 }} />
         </Grid>
         <Grid>
           <ProfilePicture />

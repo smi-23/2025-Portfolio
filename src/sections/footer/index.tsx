@@ -1,6 +1,6 @@
 "use client";
+import Contact from "@/components/contact/Contac";
 import { Stack, Typography, useTheme } from "@mui/material";
-import Contact from "./view/Contact";
 
 export default function Footer() {
   const theme = useTheme();
@@ -16,14 +16,10 @@ export default function Footer() {
           px: 1,
         }}
       >
-        <Typography
-          variant="body2"
-          color={textColor}
-          textAlign={"center"}
-        >
+        <Typography variant="body2" color={textColor} textAlign={"center"}>
           Copyright © 2025, All right reserved.
         </Typography>
-        <Contact />
+        <Contact justifyContent={{ xs: "center", sm: "center" }} sx={{ pl: 2, pt: 1 }} />
       </Stack>
     </>
   );
