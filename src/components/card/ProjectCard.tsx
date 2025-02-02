@@ -26,10 +26,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         height: 470,
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         borderRadius: 3,
-        "&:hover": {
-          overflow: "hidden",
-          transform: "scale(1.02)",
-        },
       }}
     >
       {/* 커버 이미지 */}
@@ -46,6 +42,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             alt="Project Cover"
             sx={{
               height: 230,
+              "&:hover": {
+                overflow: "hidden",
+                transform: "scale(1.02)",
+              },
             }}
           />
         )}
@@ -53,7 +53,20 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <CardContent>
         {/* 타이틀 */}
         <Link href={`/project/${slug}`} style={{ textDecoration: "none", color: "inherit" }}>
-          <Typography variant="h6" sx={{ fontWeight: 700, mb: 1 }}>
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: 700,
+              mb: 1,
+              display: "inline-block",
+              "&:hover": {
+                color: "#00cccc",
+              },
+              "&:active": {
+                color: theme.palette.text.primary,
+              },
+            }}
+          >
             {title}
           </Typography>
         </Link>

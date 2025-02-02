@@ -20,6 +20,9 @@
   font-size: 1em;
   font-weight: 500;
   font-family: var(--font-pretendard);
+  padding: 3px 5px;
+  display: inline-block;
+  margin: 4px 2px;
 }
 
 .dark .notion-inline-code {
