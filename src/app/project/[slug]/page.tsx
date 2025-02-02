@@ -3,19 +3,10 @@ import Renderer from "@/components/notion/Renderer";
 import { PROJECT } from "@/type/project";
 import { notFound } from "next/navigation";
 import ProjectDetail from "@/sections/project-detail";
+import { FetchNotionPage } from "@/lib/notionPage";
 
 interface ProjectDetailPageProps {
   params: Promise<{ slug: string }>;
-}
-
-async function getRecodeMap(pageId: string) {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
-    ? `${process.env.NEXT_PUBLIC_BASE_URL}`
-    : "http://localhost:3000";
-  const res = await fetch(`${baseUrl}/api/notion?pageId=${pageId}`, {
-    next: { revalidate: 3600 },
-  });
-  return await res.json();
 }
 
 export async function generateStaticParams() {
@@ -49,7 +40,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   }
 
   const { pageId } = project;
-  const recordMap = await getRecodeMap(pageId);
+  const recordMap = await FetchNotionPage({ pageId });
 
   return (
     <main>

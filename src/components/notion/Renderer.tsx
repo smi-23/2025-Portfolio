@@ -35,6 +35,7 @@ export const Renderer = ({ recordMap, rootPageId }: RendererProps) => {
           nextLink: Link,
           Code,
         }}
+        previewImages={true}
       />
     </div>
   );
