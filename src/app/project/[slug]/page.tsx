@@ -1,5 +1,4 @@
 import { fetchNotionDb } from "@/lib/notion";
-import { FetchNotionPage } from "@/lib/notionPage";
 import Renderer from "@/components/notion/Renderer";
 import { PROJECT } from "@/type/project";
 import { notFound } from "next/navigation";
@@ -9,22 +8,51 @@ interface ProjectDetailPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
+async function getRecodeMap(pageId: string) {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "";
+  const res = await fetch(`${baseUrl}/api/notion?pageId=${pageId}`, {
+    next: { revalidate: 3600 },
+  });
+  return await res.json();
+}
+
+export async function generateStaticParams() {
+  const projects: PROJECT[] = await fetchNotionDb();
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
+
+export async function generateMetadata({ params }: ProjectDetailPageProps) {
   const { slug } = await params;
   const projects: PROJECT[] = await fetchNotionDb();
   const project = projects.find((project) => project.slug === slug);
-
   if (!project) {
     notFound();
   }
 
-  const pageId = project.pageId;
-  const data = await FetchNotionPage({ pageId });
+  return {
+    title: project.title,
+    description: project.description,
+    cover: project.cover,
+  };
+}
+
+export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
+  const { slug } = await params;
+  const projects: PROJECT[] = await fetchNotionDb();
+  const project = projects.find((project) => project.slug === slug);
+  if (!project) {
+    notFound();
+  }
+
+  const { pageId } = project;
+  const recordMap = await getRecodeMap(pageId);
 
   return (
     <main>
       <ProjectDetail project={project} />
-      <Renderer recordMap={data} rootPageId={pageId} />
+      <Renderer recordMap={recordMap} rootPageId={pageId} />
     </main>
   );
 }
