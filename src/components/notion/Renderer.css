@@ -12,6 +12,7 @@
 
 .notion {
   font-family: var(--font-pretendard);
+  width: 900;
 }
 
 .notion-inline-code {

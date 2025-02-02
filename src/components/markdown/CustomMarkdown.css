@@ -1,4 +1,5 @@
-code {
+/* 기존 스타일 */
+.custom-code-block {
   padding: 3px 5px;
   border-radius: 3px;
   font-weight: 500;
@@ -6,12 +7,12 @@ code {
   font-family: var(--font-pretendard);
 }
 
-.dark code {
+.custom-code-block.dark {
   background-color: var(--mui-palette-action-selected);
   color: white;
 }
 
-.light code {
+.custom-code-block.light {
   background-color: #f4f6f8;
   color: black;
 }
