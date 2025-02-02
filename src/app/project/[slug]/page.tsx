@@ -9,7 +9,9 @@ interface ProjectDetailPageProps {
 }
 
 async function getRecodeMap(pageId: string) {
-  const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+    ? `https://${process.env.NEXT_PUBLIC_BASE_URL}`
+    : "http://localhost:3000";
   const res = await fetch(`${baseUrl}/api/notion?pageId=${pageId}`, {
     next: { revalidate: 3600 },
   });
