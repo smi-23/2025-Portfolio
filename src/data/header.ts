@@ -9,11 +9,11 @@ export const HEADERS: Header[] = [
     title: "Tech Stack",
   },
   {
-    id: "project",
-    title: "Project",
-  },
-  {
     id: "education",
     title: "Education",
+  },
+  {
+    id: "project",
+    title: "Project",
   },
 ];

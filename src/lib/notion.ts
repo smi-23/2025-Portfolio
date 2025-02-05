@@ -8,7 +8,7 @@ const transformCoverUrl = (cover: any, pageId: string): string => {
 
     const match = cover.file.url.match(/(?:spaceId=)([a-zA-Z0-9-]+)/);
     const spaceId = match ? match[1] : "";  // match가 null일 경우 빈 문자열로 처리
-
+    console.log(cover.file.url);
     // 새로운 URL 생성
     const newCoverUrl = `https://superficial-amber-09e.notion.site/image/${encodedUrl}?table=block&id=${pageId}&spaceId=${spaceId}&width=2000&userId=&cache=v2`;
     return newCoverUrl;

@@ -9,6 +9,8 @@ interface ProjectDetailPageProps {
   params: Promise<{ slug: string }>;
 }
 
+export const revalidate = 3600;
+
 export async function generateStaticParams() {
   const projects: PROJECT[] = await fetchNotionDb();
   return projects.map((project) => ({
