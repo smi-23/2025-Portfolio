@@ -25,7 +25,7 @@ export default function TextLogo({ text }: TextLogoProps) {
         sx={{
           color: theme.palette.text.primary,
           fontWeight: 700,
-          fontSize: 18,
+          fontSize: "1.2rem",
           "&:hover": {
             color: "#00cccc",
           },

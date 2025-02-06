@@ -8,7 +8,7 @@
 }
 
 .custom-code-block.dark {
-  background-color: var(--mui-palette-action-selected);
+  background-color: #333333;
   color: white;
 }
 

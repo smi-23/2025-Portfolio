@@ -5,12 +5,12 @@ import { Stack, Typography } from "@mui/material";
 export default function AboutMe() {
   return (
     <Stack direction="column" alignItems={{ xs: "center", sm: "flex-start" }}>
-      <Typography sx={{ fontSize: "1.5em", color: "#22d3d6" }}>
+      <Typography sx={{ fontSize: "1.5rem", color: "#22d3d6" }}>
         <strong>Software Developer</strong>
       </Typography>
-      <Typography sx={{ fontSize: "2em" }}>반갑습니다!</Typography>
-      <Typography sx={{ fontSize: "2em" }}>문제를 끝까지 파고 들고</Typography>
-      <Typography sx={{ fontSize: "2em" }}>소통을 중요하게 생각하는</Typography>
+      <Typography sx={{ fontSize: "2rem" }}>반갑습니다!</Typography>
+      <Typography sx={{ fontSize: "2rem" }}>문제를 끝까지 파고 들고</Typography>
+      <Typography sx={{ fontSize: "2rem" }}>소통을 중요하게 생각하는</Typography>
 
       {/* <div style={{ display: "flex" }}>
         <TypeAnimation
@@ -23,7 +23,7 @@ export default function AboutMe() {
         />
         <span style={{ fontSize: "2em" }}>추구하는</span>
       </div> */}
-      <Typography sx={{ fontSize: "2em" }}>
+      <Typography sx={{ fontSize: "2rem" }}>
         개발자 <strong>조가람</strong>입니다.
       </Typography>
     </Stack>

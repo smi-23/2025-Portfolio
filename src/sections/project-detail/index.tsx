@@ -1,17 +1,19 @@
 "use client";
 import { PROJECT } from "@/type/project";
-import FloatingButton from "@/components/button/FloatingButton";
-import TooltipIcon from "@/components/icon/TooltipIcon";
-
+import { Stack, Theme, useMediaQuery } from "@mui/material";
+import Renderer from "@/components/notion/Renderer";
+import FloatingMenu from "./view/FlotingMenu";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ArticleIcon from "@mui/icons-material/Article";
 
 interface projectDetailProps {
   project: PROJECT;
+  recordMap: any;
 }
 
-export default function ProjectDetail({ project }: projectDetailProps) {
+export default function ProjectDetail({ project, recordMap }: projectDetailProps) {
+  const mdUp = useMediaQuery((theme: Theme) => theme.breakpoints.up("md"));
   const { githubUrl, youtubeUrl, blogUrl } = project;
 
   const links = [
@@ -21,21 +23,9 @@ export default function ProjectDetail({ project }: projectDetailProps) {
   ];
 
   return (
-    <FloatingButton>
-      {links.map(
-        (link) =>
-          link.url && (
-            <TooltipIcon
-              key={link.title}
-              title={link.title}
-              Icon={link.icon}
-              onClick={() => {
-                window.open(link.url, "_blank");
-              }}
-              tooltipPlacement={"right"}
-            />
-          ),
-      )}
-    </FloatingButton>
+    <Stack direction={"column"} spacing={3} sx={{ margin: "auto", width: mdUp ? "70%" : "100%" }}>
+      {mdUp && <FloatingMenu links={links} />}
+      <Renderer recordMap={recordMap} />
+    </Stack>
   );
 }

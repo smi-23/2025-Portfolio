@@ -15,7 +15,7 @@ export default function Header() {
   const [showHeader, setShowHeader] = useState(false);
   const pathname = usePathname();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.up("sm"));
+  const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
 
   const toggleDarkTheme = React.useCallback(() => {
     if (mode === "system") {
@@ -67,7 +67,7 @@ export default function Header() {
         >
           <TextLogo text={"About Me"} />
           <div style={{ display: "flex", alignItems: "center" }}>
-            {isMobile && <HeaderMenu />}
+            {isDesktop && <HeaderMenu />}
             <TooltipIcon
               title={"theme button"}
               Icon={mode === "dark" || systemMode === "dark" ? WbSunnyIcon : BedtimeRoundedIcon}

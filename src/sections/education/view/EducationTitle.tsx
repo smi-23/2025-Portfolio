@@ -28,7 +28,7 @@ export default function EducationTitle({ imgSrc, name, from, duration }: Educati
         }}
       />
       <Stack>
-        <Typography sx={{ fontWeight: 700, fontSize: 25 }}>{name}</Typography>
+        <Typography sx={{ fontWeight: 700, fontSize: "1.5rem" }}>{name}</Typography>
         <Typography variant={"body1"}>주관: {from}</Typography>
         <Typography variant={"body1"}>{duration}</Typography>
       </Stack>

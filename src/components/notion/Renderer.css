@@ -18,7 +18,7 @@
 .notion-inline-code {
   background-color: #f4f6f8;
   color: black;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 500;
   font-family: var(--font-pretendard);
   padding: 3px 5px;
@@ -27,7 +27,7 @@
 }
 
 .dark .notion-inline-code {
-  background-color: var(--mui-palette-action-selected);
+  background-color: #333333;
   color: white;
 }
 
@@ -40,17 +40,17 @@
 }
 
 .dark .notion-quote {
-  background-color: var(--mui-palette-action-selected);
+  background-color: #333333;
 }
 
 .notion-h1 {
-  font-size: 35px;
+  font-size: 3.5rem;
   font-weight: bold;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .notion-h2 .notion-h-title {
-  font-size: 35px;
+  font-size: 2.5rem;
   color: #00cccc;
   font-weight: bold;
 }

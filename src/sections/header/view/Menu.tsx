@@ -14,7 +14,7 @@ export default function HeaderMenu() {
             sx={{
               color: theme.palette.text.primary,
               fontWeight: 700,
-              fontSize: 16,
+              fontSize: "1.2rem",
               mx: 2,
               "&:hover": {
                 color: "#00cccc",

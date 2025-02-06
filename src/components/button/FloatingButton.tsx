@@ -11,12 +11,11 @@ export default function FloatingButton({ children }: { children: ReactNode }) {
       direction={"column"}
       spacing={1}
       sx={{
-        bottom: 100,
-        left: "80%",
+        bottom: "10vh",
+        right: "25vh",
         backgroundColor: theme.palette.mode === "dark" ? "#333333" : "#f4f6f8",
         borderRadius: 20,
         padding: 1,
-        zIndex: 1000,
       }}
     >
       {children}

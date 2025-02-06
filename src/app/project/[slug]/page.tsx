@@ -1,5 +1,4 @@
 import { fetchNotionDb } from "@/lib/notion";
-import Renderer from "@/components/notion/Renderer";
 import { PROJECT } from "@/type/project";
 import { notFound } from "next/navigation";
 import ProjectDetail from "@/sections/project-detail";
@@ -46,8 +45,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
   return (
     <main>
-      <ProjectDetail project={project} />
-      <Renderer recordMap={recordMap} rootPageId={pageId} />
+      <ProjectDetail project={project} recordMap={recordMap}/>
     </main>
   );
 }

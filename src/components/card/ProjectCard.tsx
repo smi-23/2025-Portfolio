@@ -73,7 +73,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {/* 태그 */}
         <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
           {tags.map((tag) => (
-            <Chip key={tag} label={tag} size="small" />
+            <Chip
+              key={tag}
+              label={tag}
+              size="small"
+              sx={{
+                backgroundColor: theme.palette.mode === "dark" ? "#333333" : "#F4F6F8",
+                fontWeight: 500,
+              }}
+            />
           ))}
         </Stack>
         {/* 작업 기간 */}
