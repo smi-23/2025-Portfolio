@@ -16,31 +16,32 @@
 }
 
 .notion-inline-code {
-  background-color: #f4f6f8;
+  background-color: rgba(0, 0, 0, 0.05);
   color: black;
   font-size: 1rem;
   font-weight: 500;
   font-family: var(--font-pretendard);
-  padding: 3px 5px;
+  padding: 3px 8px;
   display: inline-block;
   margin: 4px 2px;
+  border-radius: 18px;
 }
 
 .dark .notion-inline-code {
-  background-color: #333333;
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
 }
 
 .notion-quote {
   border-color: #00cccc;
-  background-color: #f4f6f8;
+  background-color: rgba(0, 0, 0, 0.05);
   margin-top: 26.4px;
   font-size: 1rem;
   padding: 16px;
 }
 
 .dark .notion-quote {
-  background-color: #333333;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .notion-h1 {

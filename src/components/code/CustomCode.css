@@ -4,11 +4,11 @@
 }
 
 .notion-custom-code.light {
-  background-color: #f4f6f8 !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 .notion-custom-code.dark {
-  background-color: #333333 !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .notion-custom-code.light code {

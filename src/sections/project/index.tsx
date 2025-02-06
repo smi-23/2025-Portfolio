@@ -17,7 +17,7 @@ export default function Project({ projects }: ProjectProps) {
     <SectionLayout
       id="project"
       title="Project"
-      sx={{ backgroundColor: theme.palette.mode === "dark" ? "#333333" : "#f9f9f9" }}
+      sx={{ backgroundColor: theme.palette.mode === "dark" ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.05)" }}
     >
       {isMobile ? (
         <Grid2 container direction="column" spacing={2} sx={{ maxWidth: "100%" }} justifyContent={"center"}>

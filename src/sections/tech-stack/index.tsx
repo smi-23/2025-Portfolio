@@ -11,7 +11,9 @@ export default function TechStack() {
     <SectionLayout
       id="tech-stack"
       title="Tech Stack"
-      sx={{ backgroundColor: theme.palette.mode === "dark" ? "#333333" : "#f9f9f9" }}
+      sx={{
+        backgroundColor: theme.palette.mode === "dark" ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.05)",
+      }}
     >
       <Grid2
         container
@@ -20,7 +22,7 @@ export default function TechStack() {
           maxWidth: { xs: 400, sm: 550 },
           display: "flex",
           justifyContent: "center",
-          backgroundColor: theme.palette.mode === "dark" ? "#333333" : "#f9f9f9",
+          backgroundColor: "transparent",
         }}
       >
         {TECH.map((techStack: TechInfo) => (
@@ -33,7 +35,7 @@ export default function TechStack() {
               width: 70,
               height: 70,
               boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-              borderRadius: 3,
+              borderRadius: "18px",
               backgroundColor: theme.palette.mode === "dark" ? "#1e1e1e " : "white",
             }}
           >

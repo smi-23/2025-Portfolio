@@ -13,9 +13,14 @@ export default function FloatingButton({ children }: { children: ReactNode }) {
       sx={{
         bottom: "10vh",
         right: "15vh",
-        backgroundColor: theme.palette.mode === "dark" ? "#333333" : "#f4f6f8",
+        backgroundColor: theme.palette.mode === "dark" ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.05)",
         borderRadius: 20,
+        borderColor: theme.palette.mode === "dark" ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.1)",
+        borderWidth: "4px",
+        borderStyle: "solid",
         padding: 1,
+        zIndex: 1000,
+        opacity: 1,
       }}
     >
       {children}

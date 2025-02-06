@@ -1,18 +1,18 @@
 /* 기존 스타일 */
 .custom-code-block {
-  padding: 3px 5px;
-  border-radius: 3px;
+  padding: 3px 8px;
+  border-radius: 18px;
   font-weight: 500;
   font-size: 1rem;
   font-family: var(--font-pretendard);
 }
 
 .custom-code-block.dark {
-  background-color: #333333;
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
 }
 
 .custom-code-block.light {
-  background-color: #f4f6f8;
+  background-color: rgba(0, 0, 0, 0.05);
   color: black;
 }

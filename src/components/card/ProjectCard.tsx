@@ -78,7 +78,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               label={tag}
               size="small"
               sx={{
-                backgroundColor: theme.palette.mode === "dark" ? "#333333" : "#F4F6F8",
+                backgroundColor: theme.palette.mode === "dark" ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.05)",
+                borderRadius: "18px",
                 fontWeight: 500,
               }}
             />

@@ -14,7 +14,8 @@ export default function EducationDetail({ description, mdFilePath }: EducationDt
         sx={{
           width: "100%",
           p: 2,
-          backgroundColor: theme.palette.mode === "dark" ? "#333333" : "#F4F6F8",
+          backgroundColor: theme.palette.mode === "dark" ? "rgba(255, 255, 255, 0.1)" : "rgba(0, 0, 0, 0.05)",
+
           borderLeft: "4px solid #00cccc",
         }}
       >

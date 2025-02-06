@@ -8,9 +8,10 @@ import { NotionRenderer } from "react-notion-x";
 import "react-notion-x/src/styles.css";
 // used for code syntax highlighting (optional)
 import "prismjs/themes/prism-tomorrow.css";
-
 import "./Renderer.css";
-import CustomCode from "../code/CustomCode";
+
+import dynamic from "next/dynamic";
+const CustomCode = dynamic(() => import("../code/CustomCode"), { ssr: false });
 
 interface RendererProps {
   recordMap: any;
