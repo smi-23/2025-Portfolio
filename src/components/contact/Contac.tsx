@@ -9,11 +9,12 @@ export default function Contact({ sx, ...rest }: StackProps) {
   const muiTheme = useTheme();
   const isDark = muiTheme.palette.mode === "dark" ? "dark" : "light";
 
-  const notifyEvent = (text: string) => {
+  const notifyEvent = async (text: string) => {
     try {
       if (text.startsWith("https://")) {
         window.open(text, "_blank");
       } else {
+        await navigator.clipboard.writeText(text);
         toast.success(`${text}가 복사되었습니다.`, { theme: `${isDark}` });
       }
     } catch (error) {
