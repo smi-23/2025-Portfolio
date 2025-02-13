@@ -52,7 +52,6 @@ export default function Header() {
         elevation={0}
         sx={{
           display: "block",
-          backgroundColor: "white",
           borderBottom: "1px solid",
           borderColor: "#d1d1d1",
         }}

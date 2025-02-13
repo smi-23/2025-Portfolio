@@ -17,28 +17,11 @@ export default function AppThemeProvider({ children }: { children: ReactNode }) 
           colorSchemeSelector: "class",
           disableCssColorScheme: true,
         },
-        palette: {
-          primary: {
-            main: `rgb(10, 18, 42)`,
-            contrastText: `rgb(255, 255, 255)`,
-          },
-          secondary: {
-            main: `rgb(10, 18, 42)`,
-            contrastText: `rgb(255, 255, 255)`,
-          },
-          text: {
-            primary: "#000000", // 기본 텍스트 색상 (라이트 모드에서)
-            secondary: "#ffffff", // 다크 모드에서 텍스트 색상
-          },
-        },
         colorSchemes: {
           light: {
             palette: {
               primary: {
-                main: `rgb(10, 18, 42)`,
-              },
-              secondary: {
-                main: `rgb(27, 59, 111)`,
+                main: "#fff",
               },
               text: {
                 primary: "#000000", // 기본 텍스트 색상 (라이트 모드에서)
@@ -48,13 +31,10 @@ export default function AppThemeProvider({ children }: { children: ReactNode }) 
           dark: {
             palette: {
               primary: {
-                main: `rgb(10, 18, 42)`,
-              },
-              secondary: {
-                main: `rgb(27, 59, 111)`,
+                main: "#121212",
               },
               text: {
-                primary: "#ffffff", // 다크 모드에서 텍스트 색상
+                primary: "#fff", // 다크 모드에서 텍스트 색상
               },
             },
           },
