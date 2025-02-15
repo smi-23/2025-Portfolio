@@ -50,6 +50,7 @@ export async function fetchNotionDb(): Promise<PROJECT[]> {
         end: project.properties.WorkPeriod?.date?.end || "",
       },
       tags: project.properties.Tag?.multi_select?.map((tag: { name: string }) => tag.name) || [],
+      pageTitle: project.properties.PageTitle?.rich_text[0]?.plain_text || "",
       slug: project.properties.Slug?.rich_text[0]?.plain_text || "",
     }));
 

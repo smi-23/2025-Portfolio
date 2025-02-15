@@ -72,7 +72,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </Link>
         {/* 태그 */}
         <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
-          {tags.map((tag) => (
+          {tags.slice(0, 4).map((tag) => (
             <Chip
               key={tag}
               label={tag}

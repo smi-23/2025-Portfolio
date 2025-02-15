@@ -11,5 +11,6 @@ export type PROJECT = {
     end: string;
   };
   tags: string[];
+  pageTitle: string;
   slug: string;
 }
