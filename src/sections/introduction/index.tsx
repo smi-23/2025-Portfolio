@@ -19,7 +19,7 @@ export default function Introduction() {
           px: 1,
         }}
       >
-        <Grid>
+        <Grid sx={{}}>
           <AboutMe />
           <Contact justifyContent={{ xs: "center", sm: "flex-start" }} pl={{ xs: 2, sm: 0 }} sx={{ py: 2 }} />
         </Grid>
